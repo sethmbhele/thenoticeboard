@@ -1,4 +1,32 @@
 Thenoticeboard::Application.routes.draw do
+  
+
+  
+
+  #admin routes
+  namespace :admin do
+
+  root :to =>'dashboard#index'
+    devise_for :adminusers
+  resources :categories do
+    # member do
+    #     get "change_status"        
+    #   end
+  end  
+  resources :subcategories do
+      # member do
+      #   get "change_status"        
+      # end
+  end
+
+  end  
+
+
+devise_for :adminusers,:controllers => { :registrations => "adminsession",:sessions => "adminregistration" } do
+     
+    
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

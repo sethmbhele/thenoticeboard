@@ -1,0 +1,111 @@
+
+<div class="mid_contain">
+          <table border="0" cellpadding="0" cellspacing="0" align="left" width="98%">
+          <tbody><tr>
+          <td align="left" valign="top">&nbsp;
+            
+          </td>
+          </tr>
+          <tr>
+          <td align="center" valign="top">
+            <p id="notice"><%= notice %></p>
+          </td>
+          </tr>
+
+
+          <tr>
+          <td align="left" valign="top">
+            <div class="comman_heading">Categories</div>
+            
+            <%= link_to 'New Category', new_admin_category_path,:class =>"addnewcategorybutton" %>
+
+           <!--  <%#= form_for @categories, :url => admin_categories_path, :html => {:method => :get} do |f| %>  
+       <table align="right" style="margin-right:20px">
+       <tr>  
+       <td class='search_label'> 
+          Name
+       </td>
+       <td>
+       <div>
+        <%#= f.text_field :name ,:style => "width:150px;height:16px;"%> 
+
+       </div>
+       </td>
+         <td>
+       
+       </td>
+        
+       
+       <td valign="top">
+       <%#= f.submit "Search",:class => "button" %>
+       </td>
+       </tr>
+       </table>
+       <%# end %>  -->
+          </td>
+          </tr>
+          <tr>
+          <td align="left" valign="top">
+          <table width="735" border="0" cellspacing="1" cellpadding="5"  class="maintable">
+  <tr>
+    <td height="30" align="left" valign="middle" bgcolor="#FFFFFF"><strong>
+      Name
+     <%#= sort_link @search,:name ,"Name",:class =>"sort_link"%>
+    </strong></td>
+    <td width="255" align="left" valign="middle" bgcolor="#FFFFFF"><strong>Actions</strong></td>
+  </tr>
+
+
+  
+
+<% @categories.each_with_index do |category,i| %>
+ <% if i % 2 ==0 %>    
+      <% @class="odd_class" %>    
+      <% else %>
+      <% @class="even_class" %>    
+      <% end%>
+      <tr class=<%=@class%>>
+
+
+    <td height="30" align="left" valign="middle" ><%= category.name %></td>
+     <!-- <td><%#= category.desc %></td> -->
+    <td align="left" valign="middle">
+    <%= link_to 'Show', admin_category_path(category) ,:class=>"showbutton"%>
+    <%= link_to 'Edit', edit_admin_category_path(category),:class=>"showbutton" %>
+    <%#if category.status==true%>
+    <%#= link_to 'Active', change_status_admin_category_path(category),:class=>"showbutton" ,:confirm => 'Do you want  to inactivate category?' %>
+    <%#else%>
+    <%#= link_to 'Inactive', change_status_admin_category_path(category),:class=>"showbutton",:confirm => 'Do you want to activate category?' %>
+    <%#end%>
+    <%#= link_to 'Destroy', admin_category_path(category),:class=>"showbutton", method: :delete, data: { confirm: 'Are you sure want to delete the category?' } %>
+
+  </td>
+  </tr>
+<% end %> 
+<% if @categories.empty? %>
+<tr>
+   <td height="30" align="left" valign="middle" bgcolor="#f4f4f4" colspan="3">
+      No Records Found
+   </td> 
+ </tr> 
+<% end %> 
+</table>
+<table align="center">
+  <tr>
+    <td align="center">
+    <div class="digg_pagination">    
+       <%= will_paginate @categories,:container => false %>
+    </div>
+    </td>
+  </tr>   
+</table>
+          </td>
+          </tr>
+          </tbody></table>
+        </div>
+
+
+
+
+
+

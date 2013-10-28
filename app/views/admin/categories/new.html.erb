@@ -1,0 +1,86 @@
+<script>
+$().ready(function() {
+$("#new_category_form").validate({
+     rules: {
+               "category[name]": {required: true},
+               "category[photo]":{required: true}               
+             },
+     messages: {
+          "category[name]": {required: 'Please enter category'},
+           "category[photo]":{
+                    required: "Please select image"                 
+                }  
+             }  
+}); 
+});   
+</script>
+
+<div class="mid_contain">
+          <table border="0" cellpadding="0" cellspacing="0" align="left" width="98%">
+          <tbody><tr>
+          <td align="left" valign="top">&nbsp;
+            
+          </td>
+          </tr>
+          <tr>
+          <td align="left" valign="top">
+            <div class="comman_heading">Add Category</div>
+           
+          </td>
+          </tr>
+
+
+<tr>
+<td>
+<%#= render 'form' %>
+
+<%#= link_to 'Back', admin_categories_path %>
+
+
+
+<%= form_for([:admin, @category],:html =>{:id => "new_category_form",:multipart => true}) do |f| %>
+<table width="735" cellspacing="0" cellpadding="5"  class="maintable" style="border:1px solid #CECECE">
+ 
+
+   
+  <% if @category.errors.any? %>
+      <tr>
+      <td height="30" align="center" valign="middle" bgcolor="#FFFFFF" colspan="2" id="notice">
+      <% @category.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
+      </td>
+      </tr>
+   
+  <% end %>
+
+ <tr>
+    <td height="30" align="right" valign="top" bgcolor="#FFFFFF">
+     <strong> Name</strong><span style="color:red">*</span>
+    </td>
+    <td align="left" valign="top" bgcolor="#FFFFFF">
+         <%= f.text_field :name,:class=>'required',:maxlength =>60,:size=>20 %>
+
+    </td>
+  </tr>
+  
+ 
+   <tr>  
+    <td height="30" align="left" valign="top" bgcolor="#FFFFFF" width="200" ></td>
+       <td align="left" valign="top" bgcolor="#FFFFFF">
+       <%= f.submit "Save",:class =>"addnewcategorybutton" %>
+       <input type="button" value="Back" style="margin-left:5px" class="addnewcategorybutton" onClick="location.href='/admin/categories'" >
+      
+    </td>
+   </tr>   
+ 
+  
+</table>
+<% end %>
+
+</td>
+</tr>
+</tbody>
+</table>
+        
+</div>

@@ -1,0 +1,55 @@
+<script>
+$().ready(function() {
+$("#new_category_form").validate({
+     rules: {
+               "category[name]": "required"
+             },
+     messages: {
+          "category[name]": "Please enter category"
+             }  
+});
+ });    
+</script>
+<%= form_for([:admin, @category],:html =>{:id => "new_category_form"}) do |f| %>
+<table width="735" cellspacing="0" cellpadding="5"  class="maintable" style="border:1px solid #CECECE">
+ 
+
+
+   
+  <% if @category.errors.any? %>
+      <tr>
+      <td height="30" align="center" valign="middle" bgcolor="#FFFFFF" colspan="2" id="notice">
+      <% @category.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
+      </td>
+      </tr>
+   
+  <% end %>
+
+ <tr>
+    <td height="30" align="right" valign="top" bgcolor="#FFFFFF">
+     <strong> Name </strong><span style="color:red">*</span>
+
+    </td>
+    <td align="left" valign="top" bgcolor="#FFFFFF" height="40">
+         <%= f.text_field :name ,:maxlength =>60,:size=>20 %>
+    </td>
+  </tr>
+ 
+
+  
+ 
+   <tr>  
+    <td height="30" align="left" valign="top" bgcolor="#FFFFFF" width="200" ></td>
+       <td align="left" valign="top" bgcolor="#FFFFFF">
+       <%= f.submit "Save",:class =>"addnewcategorybutton" %>
+       <input type="button" value="Back" style="margin-left:5px" class="addnewcategorybutton" onClick="location.href='/admin/categories'" >
+      
+    </td>
+   </tr>   
+ 
+
+</table>
+  
+<% end %>
