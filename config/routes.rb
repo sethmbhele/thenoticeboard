@@ -7,7 +7,7 @@ Thenoticeboard::Application.routes.draw do
   namespace :admin do
 
   root :to =>'dashboard#index'
-    devise_for :adminusers
+    #devise_for :adminusers
   resources :categories do
     # member do
     #     get "change_status"        
@@ -23,9 +23,13 @@ Thenoticeboard::Application.routes.draw do
 
 
 devise_for :adminusers,:controllers => { :registrations => "adminsession",:sessions => "adminregistration" } do
-     
+  get '/signout'  => 'adminsession#destroy'
     
-  end
+
+ 
+   
+end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

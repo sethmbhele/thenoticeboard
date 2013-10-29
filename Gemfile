@@ -9,6 +9,8 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'jquery-rails', '2.0.2'
 gem 'devise'
 gem 'thin','~> 1.5.0'
+gem "therubyracer"
+gem "less-rails"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
