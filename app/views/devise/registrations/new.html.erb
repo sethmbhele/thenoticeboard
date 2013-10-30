@@ -1,3 +1,120 @@
+
+	
+
+	<!-- Wrapper -->
+<div id="login">
+<div class="container">
+	<div class="wrapper signup">
+		
+			<h1 class="glyphicons lock">FLAT KIT <i></i></h1>
+		
+			<!-- Box -->
+			<div class="widget widget-heading-simple">
+				
+				<div class="widget-head">
+					<h3 class="heading">Create Account</h3>
+					<div class="pull-right">
+						Already a member?
+						<%- if controller_name != 'sessions' %>
+  <%= link_to "Sign in", new_session_path(resource_name),:class=>"btn btn-inverse btn-mini" %>
+  <% end %>
+					</div>
+				</div>
+				<div class="widget-body">
+		
+
+					<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+					<!-- Row -->
+					<div class="row-fluid row-merge">
+					
+					  <%= devise_error_messages! %>
+
+						<div class="span6">
+							<div class="innerR">
+								<label class="strong">Email</label>
+								
+								 <%= f.email_field :email, :autofocus => true, :class=>"input-block-level", :placeholder=>"Your Email"  %>
+								<label class="strong">Password</label>
+								 <%=  f.password_field :password ,:class=>"input-block-level", :placeholder=>"Your Password" %>
+
+								<label class="strong">Confirm Password</label>
+								 <%= f.password_field :password_confirmation ,:class=>"input-block-level",:placeholder=>"Your Password confirmation"%>
+							</div>
+							<span class="btn btn-icon-stacked btn-block btn-success glyphicons user_add" style="font-size:12px;" >Create account and </br>
+					<i></i><%= f.submit "Sign up",:style=>"font-size:12px", :class=>"btn btn-success" %>
+					</span>
+					<p>Having troubles? <a href="faq.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-default-menus-light&amp;sidebar_type=dropdown">Get Help</a></p>
+						</div>
+					
+					<% end %>
+					  
+
+            
+
+
+
+					<!-- Form -->
+				<!-- 	<form method="post" action="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-default-menus-light&amp;sidebar_type=dropdown"> -->
+					
+					<!-- Row -->
+					<!-- <div class="row-fluid row-merge">
+					
+						<!-- Column -->
+						<!-- <div class="span6">
+							<div class="innerR">
+								<label class="strong">Username</label>
+								<input type="text" class="input-block-level" placeholder="Your Username"/>
+								<label class="strong">Password</label>
+								<input type="password" class="input-block-level" placeholder="Your Password"/>
+								<label class="strong">Confirm Password</label>
+								<input type="password" class="input-block-level" placeholder="Confirm Password"/>
+							</div>
+						</div> --> 
+						<!-- // Column END -->
+						
+						<!-- Column -->
+						<!-- <div class="span6">
+							<div class="innerL">
+								<label class="strong">Email</label>
+								<input type="text" class="input-block-level" placeholder="Your Email Address"/>
+								<label class="strong">Confirm Email</label>
+								<input type="text" class="input-block-level" placeholder="Confirm Your Email Address"/>
+								
+
+								<span class="btn btn-icon-stacked btn-block btn-success glyphicons user_add" style="font-size:12px;" >Create account and </br>
+					<i></i><%#= f.submit "Sign up",:style=>"color:white;text-decoration:none" %>
+					</span>
+					</div>
+			  </div> -->
+				
+
+								<!-- <a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-default-menus-light&amp;sidebar_type=dropdown" class="btn btn-icon-stacked btn-block btn-success glyphicons user_add"><i></i><span>Create account and</span><span class="strong">Join FLAT KIT now</span></a>
+								<p>Having troubles? <a href="faq.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-default-menus-light&amp;sidebar_type=dropdown">Get Help</a></p> -->
+							
+						<!-- // Column END -->
+						
+					</div>
+					<!-- // Row END -->
+					
+					</form>
+					<!-- // Form END -->
+		
+		
+				</div>
+				<!-- // Box END -->
+				
+			</div>
+			
+	</div>
+</div>
+</div>
+<!-- // Wrapper END -->	
+
+
+<!-- // Themer END -->
+
+<!-- 	
 <h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -16,3 +133,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+ -->

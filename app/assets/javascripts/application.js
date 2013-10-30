@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require adin/bootstrap
-//= require adin/bootstrap.min
+//= require admin/bootstrap
+//= require admin/bootstrap.min
 //= require_tree .

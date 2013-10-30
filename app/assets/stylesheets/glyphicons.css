@@ -295,7 +295,7 @@ html .halflings {
   content: "\e086";
 }
 .glyphicons.display i:before {
-	content:url(../../../../../html/front/img/Image-1.jpg);
+  /**content: "\e087";*/
 }
 .glyphicons.log_book i:before {
   content: "\e088";
@@ -307,7 +307,7 @@ html .halflings {
   content: "\e090";
 }
 .glyphicons.eyedropper i:before {
-   content:url(../../../../../html/front/img/Image-4.jpg);
+  /**content: "\e091";*/
 }
 .glyphicons.adjust i:before {
   content: "\e092";
@@ -526,7 +526,7 @@ html .halflings {
   content: "\e163";
 }
 .glyphicons.iphone i:before {
-  content:url(../../../../../html/front/img/Image-2.jpg);
+  /**content: "\e164";*/
 }
 .glyphicons.iphone_transfer i:before {
   content: "\e165";
@@ -577,7 +577,7 @@ html .halflings {
   content: "\e180";
 }
 .glyphicons.facetime_video i:before {
-  content: "\e181";
+  /**content: "\e181";*/
 }
 .glyphicons.download_alt i:before {
   content: "\e182";
@@ -877,7 +877,7 @@ html .halflings {
   content: "\e280";
 }
 .glyphicons.settings i:before {
-    content:url(../../../../../html/front/img/Image-3.jpg);
+  /*content: "\e281";*/
 }
 .glyphicons.bullets i:before {
   content: "\e282";

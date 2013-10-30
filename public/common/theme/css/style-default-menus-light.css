@@ -7242,7 +7242,7 @@ body.login #login .wrapper {
   position: relative;
 }
 body.login #login .wrapper.signup {
-  max-width: 600px;
+  max-width: 300px;
 }
 body.login #login .widget .widget-head .btn {
   margin: -4px 0 0 5px;
