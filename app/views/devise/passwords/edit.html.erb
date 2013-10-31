@@ -1,3 +1,151 @@
+
+	<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7 fluid top-full menuh-top sticky-top sidebar sidebar-full sidebar-dropdown sidebar-width-mini sidebar-hat"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8 fluid top-full menuh-top sticky-top sidebar sidebar-full sidebar-dropdown sidebar-width-mini sidebar-hat"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9 fluid top-full menuh-top sticky-top sidebar sidebar-full sidebar-dropdown sidebar-width-mini sidebar-hat"> <![endif]-->
+<!--[if gt IE 8]> <html class="animations ie gt-ie8 fluid top-full menuh-top sticky-top sidebar sidebar-full sidebar-dropdown sidebar-width-mini sidebar-hat"> <![endif]-->
+<!--[if !IE]><!--><html class="animations fluid top-full menuh-top sticky-top sidebar sidebar-full sidebar-dropdown sidebar-width-mini sidebar-hat"><!-- <![endif]-->
+<head>
+	<title>The Noticeboard</title>
+	
+	<!-- Meta -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	
+	<!-- Bootstrap -->
+	<%= stylesheet_link_tag "application"%>
+	<%#= javascript_include_tag "application" %>
+	<!-- <link href="../../common/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="../../common/bootstrap/css/responsive.css" rel="stylesheet" type="text/css" />
+	 -->
+	<!-- Glyphicons Font Icons -->
+	<link href="../../common/theme/fonts/glyphicons/css/glyphicons.css" rel="stylesheet" />
+	
+	<link rel="stylesheet" href="../../common/theme/fonts/font-awesome/css/font-awesome.min.css">
+	<!--[if IE 7]><link rel="stylesheet" href="../../common/theme/fonts/font-awesome/css/font-awesome-ie7.min.css"><![endif]-->
+	
+	<!-- Uniform Pretty Checkboxes -->
+	<link href="../common/theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css" rel="stylesheet" />
+	
+	<!-- PrettyPhoto -->
+    <link href="../../common/theme/scripts/plugins/gallery/prettyphoto/css/prettyPhoto.css" rel="stylesheet" />
+    
+    <!-- JQuery -->
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+      <script src="../../common/theme/scripts/plugins/system/html5shiv.js"></script>
+    <![endif]-->
+	
+	<!-- Main Theme Stylesheet :: CSS -->
+	<link href="/common/theme/css/style-default-menus-light.css?1374506526" rel="stylesheet" type="text/css" /> 	
+	
+	
+	<!-- FireBug Lite -->
+	<!-- <script src="https://getfirebug.com/firebug-lite-debug.js"></script> -->
+
+	<!-- LESS.js Library -->
+	<script src="../../common/theme/scripts/plugins/system/less.min.js"></script>
+	
+	<!-- Global -->
+	<script>
+	//<![CDATA[
+	var basePath = '',
+		commonPath = '../../common/';
+
+	// colors
+	var primaryColor = '#e5412d',
+		dangerColor = '#b55151',
+		successColor = '#609450',
+		warningColor = '#ab7a4b',
+		inverseColor = '#45484d';
+
+	var themerPrimaryColor = primaryColor;
+	//]]>
+	</script>
+	<%= csrf_meta_tags %>
+</head>
+<body class="document-body login">
+	
+
+	<!-- Wrapper -->
+<div id="login">
+<div class="container">
+	<div class="wrapper signup">
+		
+			<h1 class="glyphicons lock">FLAT KIT <i></i></h1>
+		
+			<!-- Box -->
+			<div class="widget widget-heading-simple">
+				
+				<div class="widget-head">
+					<h3 class="heading">Change your password</h3>
+					<div class="pull-right">
+						<div style="float:left"><%- if controller_name != 'sessions' %>
+  <%= link_to "Sign in", new_session_path(resource_name),:class=>"btn btn-inverse btn-mini" %><br />
+<% end -%></div>
+	<div style="float:left">
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%= link_to "Sign up", new_registration_path(resource_name),:class=>"btn btn-inverse btn-mini" %><br />
+<% end -%></div>
+					</div>
+				</div>
+				<div class="widget-body">
+		
+
+					<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+
+					<!-- Row -->
+					<div class="row-fluid row-merge">
+					
+					  <%= devise_error_messages! %>
+					   <%= f.hidden_field :reset_password_token %>
+						<div class="span6">
+							<div class="innerR">
+								
+								<label class="strong"> New password</label>
+								 <%=  f.password_field :password ,:class=>"input-block-level", :placeholder=>"Your Password" %>
+
+								<label class="strong">Confirm Password</label>
+								 <%= f.password_field :password_confirmation ,:class=>"input-block-level",:placeholder=>"Your Password confirmation"%>
+							</div>
+							<span class="btn btn-icon-stacked btn-block btn-success glyphicons user_add" style="font-size:12px;" >
+					<%= f.submit "Change my password",:style=>"font-size:12px", :class=>"btn btn-success" %>
+					</span>
+					<p>Having troubles? <a href="faq.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-default-menus-light&amp;sidebar_type=dropdown">Get Help</a></p>
+						</div>
+					
+					<% end %>
+					  
+
+            
+
+
+					</div>
+					<!-- // Row END -->
+					
+					</form>
+					<!-- // Form END -->
+		
+		
+				</div>
+				<!-- // Box END -->
+				
+			</div>
+			
+	</div>
+</div>
+</div>
+
+</div>
+
+<!-- 
+
 <h2>Change your password</h2>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
@@ -14,3 +162,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+ -->
