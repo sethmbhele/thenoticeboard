@@ -23,9 +23,6 @@ Thenoticeboard::Application.routes.draw do
 
 
 devise_for :adminusers,:controllers => { :registrations => "adminsession",:sessions => "adminregistration" } do
-  get '/signout'  => 'adminsession#destroy'
-    
-
  
    
 end
