@@ -7,7 +7,7 @@
           </tr>
           <tr>
           <td align="left" valign="top">
-            <div class="comman_heading" >Edit Category</div>
+            <div class="comman_heading" >Edit Subcategory</div>
           </td>
           </tr>
 
@@ -16,15 +16,15 @@
 <td>
 
 
-<%= form_for([:admin, @category],:html =>{:id => "new_category_form",:multipart => true}) do |f| %>
+<%= form_for([:admin, @subcategory],:html =>{:id => "new_category_form",:multipart => true}) do |f| %>
 <table class="table table-bordered" >
  
 
    
-  <% if @category.errors.any? %>
+  <% if @subcategory.errors.any? %>
       <tr>
       <td height="30" align="center" valign="middle" bgcolor="#FFFFFF" colspan="2" id="notice">
-      <% @category.errors.full_messages.each do |msg| %>
+      <% @subcategory.errors.full_messages.each do |msg| %>
         <%= msg %>
       <% end %>
       </td>
@@ -47,7 +47,7 @@
     <td height="30" align="left" valign="top" bgcolor="#FFFFFF" width="200" ></td>
        <td align="left" valign="top" bgcolor="#FFFFFF">
        <%= f.submit "Save", :class=>"btn btn-primary pull-left" %>
-       <input type="button" value="Back" style="margin-left:5px" class="btn btn-primary pull-left" onClick="location.href='/admin/categories'" >
+       <input type="button" value="Back" style="margin-left:5px" class="btn btn-primary pull-left" onClick="location.href='/admin/subcategories'" >
       
     </td>
    </tr>   

@@ -26,10 +26,9 @@ class Admin::CategoriesController < Admin::BaseController
     # end 
 
      #@categories = .all
-    # @search = Category.search(params[:search]) 
-    # @categories =  @search.paginate(:page => session[:cat_page], :per_page => 20,:order => 'created_at DESC')
-    @categories =  Category.paginate(:page => session[:cat_page], :per_page => 20,:order => 'created_at DESC')
-
+     @search = Category.search(params[:search]) 
+     @categories =  @search.paginate(:page => session[:cat_page], :per_page => 5,:order => 'created_at DESC')
+  
 
     # @categories = Category.paginate(:page => params[:page], :per_page => 20,:order => 'name ASC')
 
@@ -64,6 +63,7 @@ class Admin::CategoriesController < Admin::BaseController
   # GET /categories/1/edit
   def edit
     @category = Category.find(params[:id])
+
   end
 
   # POST /categories

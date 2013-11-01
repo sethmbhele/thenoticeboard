@@ -9,14 +9,14 @@ Thenoticeboard::Application.routes.draw do
   root :to =>'dashboard#index'
     #devise_for :adminusers
   resources :categories do
-    # member do
-    #     get "change_status"        
-    #   end
+    member do
+        get "change_status"        
+      end
   end  
   resources :subcategories do
-      # member do
-      #   get "change_status"        
-      # end
+      member do
+        get "change_status"        
+      end
   end
 
   end  

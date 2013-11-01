@@ -1,5 +1,5 @@
 
-<%- model_class = Category -%>
+<%- model_class = Subcategory -%>
 <div class="mid_contain">
                   
 <div style="width:100%;float:left">
@@ -12,9 +12,9 @@
                             <p id="notice"><%= notice %></p>
                   </div>
            
-            <%= form_for @search, :url => admin_categories_path, :html => {:method => :get} do |f| %> 
+            <%= form_for @search, :url => admin_subcategories_path, :html => {:method => :get} do |f| %> 
             <div style="width:100%;float:left">
-                <div style="width:50%;float:left"><%= link_to 'New Category', new_admin_category_path,:class=>"btn btn-primary pull-left" %>
+                <div style="width:50%;float:left"><%= link_to 'New Subcategory', new_admin_subcategory_path,:class=>"btn btn-primary pull-left" %>
                 </div>
                  <div style="width:50%;float:left"> 
                     <div style="float:left">Name</div> 
@@ -25,9 +25,8 @@
                 </div>
             </div> 
 
-         <% end %> 
-          
-          
+           <% end %> 
+           
               
             <table class="table table-bordered"  >
               <thead>
@@ -39,7 +38,7 @@
               </thead>
               <tbody>
                 
-                <% @categories.each_with_index do |category,i| %>
+                <% @subcategories.each_with_index do |category,i| %>
                 <% if i % 2 ==0 %>    
                   <% @class="odd_class" %>    
                   <% else %>
@@ -51,35 +50,37 @@
                 <td height="30" align="left" valign="middle" ><%= category.name %></td>
                  <!-- <td><%#= category.desc %></td> -->
                 <td width="280">
-                <%= link_to 'Show', admin_category_path(category) , :class=>"btn btn-primary pull-left"%>
-                <%= link_to 'Edit', edit_admin_category_path(category), :class=>"btn btn-primary pull-left"%>
+                <%= link_to 'Show', admin_subcategory_path(category) , :class=>"btn btn-primary pull-left"%>
+                <%= link_to 'Edit', edit_admin_subcategory_path(category), :class=>"btn btn-primary pull-left"%>
                 <%if category.status==true%>
-               <%= link_to 'Active', change_status_admin_category_path(category), :class=>"btn btn-primary pull-left" ,:confirm => 'Do you want  to inactivate category?' %>
+               <%= link_to 'Active', change_status_admin_subcategory_path(category), :class=>"btn btn-primary pull-left" ,:confirm => 'Do you want  to inactivate category?' %>
                 <%else%>
-                <%= link_to 'Inactive', change_status_admin_category_path(category), :class=>"btn btn-primary pull-left",:confirm => 'Do you want to activate category?' %> 
+                <%= link_to 'Inactive', change_status_admin_subcategory_path(category), :class=>"btn btn-primary pull-left",:confirm => 'Do you want to activate category?' %> 
                 <%end%>
                 
                 <%#= link_to 'Destroy', admin_category_path(category),:class=>"btn btn-primary pull-left", method: :delete, data: { confirm: 'Are you sure want to delete the category?' } %>
                 </td>
                 </tr>
+
+
             <% end %> 
-                     <% if @categories.empty? %>
-                      <tr>
-                       <td height="30" align="left" valign="middle" bgcolor="#f4f4f4" colspan="3">
-                          No Records Found
-                       </td> 
-                     </tr> 
-                    <% end %> 
+             
+                  <% if @subcategories.empty? %>
+                  <tr>
+                     <td height="30" align="left" valign="middle" bgcolor="#f4f4f4" colspan="3">
+                        No Records Found
+                     </td> 
+                   </tr> 
+                  <% end %>
               
               </tbody>
             </table>
-    
           </table>
-
-                
+  
               <div class="digg_pagination" width="100%" style="float:right">    
-                 <%= will_paginate @categories,:container => true %>
-            </div>
+                 <%= will_paginate @subcategories,:container => true %>
+              </div>
+            
     </div>
 
 </div>

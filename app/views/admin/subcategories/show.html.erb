@@ -1,10 +1,10 @@
-<%- model_class = Category -%>
+<%- model_class = Subcategory -%>
 <div class="mid_contain">
         
   <div style="width:100%;float:left">
           
                   <div class="page-header">
-                    <h2><div class="comman_heading">Category</div><h2>
+                    <h2><div class="comman_heading">Subcategory</div><h2>
                   </div>
          
        
@@ -16,7 +16,7 @@
                              <strong> Name</strong>
                             </td>
                             <td align="left" valign="top" bgcolor="#FFFFFF">
-                                 <%= @category.name %>
+                                 <%= @subcategory.name %>
 
                             </td>
                           </tr>
@@ -25,7 +25,7 @@
                        
                        </tr>                  
                     </table>
-     <%= link_to 'Back', admin_categories_path ,:class=>"btn btn-primary pull-left"%>
+     <%= link_to 'Back', admin_subcategories_path ,:class=>"btn btn-primary pull-left"%>
 
   </div>        
 </div>

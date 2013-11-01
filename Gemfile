@@ -12,6 +12,8 @@ gem 'thin','~> 1.5.0'
 gem "therubyracer"
 gem "less-rails"
 gem "heroku"
+gem 'meta_search'
+
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
