@@ -12,5 +12,4 @@
  *= require_tree .
  */
 
- @iconSpritePath: asset-path('glyphicons-halflings.png');
-@iconWhiteSpritePath: asset-path('glyphicons-halflings-white.png');
+ 
