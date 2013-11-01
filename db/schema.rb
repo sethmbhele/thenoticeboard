@@ -40,11 +40,14 @@ ActiveRecord::Schema.define(:version => 20131101111758) do
   end
 
   create_table "subcategories", :force => true do |t|
-    t.string   "name",       :limit => 90
+    t.string   "name",        :limit => 90
     t.text     "text"
-    t.boolean  "status",                   :default => true
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.boolean  "status",                    :default => true
+    t.integer  "category_id"
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
+
+  add_index "subcategories", ["category_id"], :name => "index_subcategories_on_category_id"
 
 end

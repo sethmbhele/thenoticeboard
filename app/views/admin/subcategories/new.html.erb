@@ -28,7 +28,18 @@
 
                         </td>
                       </tr>
-                                     
+                                                 
+                      <tr>  
+                      <td height="30" align="right" valign="top" bgcolor="#FFFFFF" width="200">
+                        <strong>Category</strong><span style="color:red">*</span>
+                      </td>
+                      <td align="left" valign="top" bgcolor="#FFFFFF">
+                         
+
+                         <%= f.collection_select :category_id, @category, :id, :name, :prompt => "Select"  %> 
+                      </td>
+                    </tr>
+
                        <tr>  
                         <td height="30" align="left" valign="top" bgcolor="#FFFFFF" width="200" ></td>
                            <td align="left" valign="top" bgcolor="#FFFFFF">

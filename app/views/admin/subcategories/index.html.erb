@@ -32,7 +32,7 @@
               <thead>
                 <tr>               
                   <th><%= model_class.human_attribute_name(:name) %></th>                 
-                  
+                  <th><%= model_class.human_attribute_name(:category_id) %></th>
                   <th><%=t '.actions', :default => t("helpers.actions") %></th>
                 </tr>
               </thead>
@@ -48,6 +48,8 @@
 
 
                 <td height="30" align="left" valign="middle" ><%= category.name %></td>
+
+                <td height="30" align="left" valign="middle" ><%= category.category.name unless category.category.nil? %></td>
                  <!-- <td><%#= category.desc %></td> -->
                 <td width="280">
                 <%= link_to 'Show', admin_subcategory_path(category) , :class=>"btn btn-primary pull-left"%>
