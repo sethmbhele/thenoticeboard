@@ -65,7 +65,7 @@ before_filter :check_option
 
   # GET /subcategories/1/edit
   def edit
-
+ 
     @subcategory = Subcategory.find(params[:id])
      @category = Category.order('name asc')
   end

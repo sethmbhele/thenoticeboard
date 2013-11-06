@@ -59,7 +59,7 @@
                 <%= link_to 'Inactive', change_status_admin_category_path(category), :class=>"btn btn-primary pull-left",:confirm => 'Do you want to activate category?' %> 
                 <%end%>
                 
-                <%#= link_to 'Destroy', admin_category_path(category),:class=>"btn btn-primary pull-left", method: :delete, data: { confirm: 'Are you sure want to delete the category?' } %>
+                <%= link_to 'Destroy', admin_category_path(category),:class=>"btn btn-primary pull-left", method: :delete, data: { confirm: 'Are you sure want to delete the category?' } %>
                 </td>
                 </tr>
             <% end %> 
