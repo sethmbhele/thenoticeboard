@@ -29,7 +29,7 @@ before_filter :check_option
 
 
     @search = Subcategory.search(params[:search]) 
-    @subcategories =  @search.paginate(:page => session[:sub_page], :per_page => 5,:order => 'name ASC')
+    @subcategories =  @search.paginate(:page => params[:page], :per_page => 5,:order => 'created_at DESC')
 
 
 

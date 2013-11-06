@@ -14,11 +14,11 @@
            
             <%= form_for @search, :url => admin_subcategories_path, :html => {:method => :get} do |f| %> 
             <div style="width:100%;float:left">
-                <div style="width:50%;float:left"><%= link_to 'New Subcategory', new_admin_subcategory_path,:class=>"btn btn-primary pull-left" %>
+                <div style="width:45%;float:left"><%= link_to 'New Subcategory', new_admin_subcategory_path,:class=>"btn btn-primary pull-left" %>
                 </div>
-                 <div style="width:50%;float:left"> 
-                    <div style="float:left">Name</div> 
-                    <div style="float:right">
+                 <div style="width:55%;float:left"> 
+                    <div style="float:left;padding-left:20px;">Name</div> 
+                    <div style="float:right;width:79%">
                     <%= f.text_field :name_contains ,:style => "width:185px;height:16px;", :class =>"input-block-level"%>
                     <%= f.submit "Search", :class=>"btn btn-primary pull-right" %>
                     </div>
@@ -55,9 +55,9 @@
                 <%= link_to 'Show', admin_subcategory_path(category) , :class=>"btn btn-primary pull-left"%>
                 <%= link_to 'Edit', edit_admin_subcategory_path(category), :class=>"btn btn-primary pull-left"%>
                 <%if category.status==true%>
-               <%= link_to 'Active', change_status_admin_subcategory_path(category), :class=>"btn btn-primary pull-left" ,:confirm => 'Do you want  to inactivate category?' %>
+               <%= link_to 'Active', change_status_admin_subcategory_path(category), :class=>"btn btn-primary pull-left" ,:confirm => 'Do you want  to inactivate subcategory?' %>
                 <%else%>
-                <%= link_to 'Inactive', change_status_admin_subcategory_path(category), :class=>"btn btn-primary pull-left",:confirm => 'Do you want to activate category?' %> 
+                <%= link_to 'Inactive', change_status_admin_subcategory_path(category), :class=>"btn btn-primary pull-left",:confirm => 'Do you want to activate subcategory?' %> 
                 <%end%>
                 
                 <%= link_to 'Destroy', admin_subcategory_path(category),:class=>"btn btn-primary pull-left", method: :delete, data: { confirm: 'Are you sure want to delete the category?' } %>
