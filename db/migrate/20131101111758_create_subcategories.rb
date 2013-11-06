@@ -4,12 +4,8 @@ class CreateSubcategories < ActiveRecord::Migration
       t.string :name,:limit =>90
       t.text :text
       t.boolean :status, :default => true
-      t.references :category
 
       t.timestamps
     end
-    add_index :subcategories, :category_id
-
-    
   end
 end
