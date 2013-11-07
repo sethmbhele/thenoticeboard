@@ -8,3 +8,13 @@
     position: relative;
     width: 100%;
 }
+
+.odd_class
+{
+    background-color:#f4f4f4;
+}
+
+.even_class
+{
+    background-color: #fff;
+}
