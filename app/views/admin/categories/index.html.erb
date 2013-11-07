@@ -29,7 +29,7 @@
           
           
               
-            <table class="table table-bordered"  >
+            <table class="table table-bordered table-striped"  >
               <thead>
                 <tr>               
                   <th><%= model_class.human_attribute_name(:name) %></th>                 
@@ -40,12 +40,8 @@
               <tbody>
                 
                 <% @categories.each_with_index do |category,i| %>
-                <% if i % 2 ==0 %>    
-                  <% @class="odd_class" %>    
-                  <% else %>
-                  <% @class="even_class" %>    
-                  <% end%>
-                  <tr class=<%=@class%>>
+                
+                  <tr>
 
 
                 <td height="30" align="left" valign="middle" ><%= category.name %></td>
