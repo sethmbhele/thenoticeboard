@@ -3,6 +3,8 @@ Thenoticeboard::Application.routes.draw do
 
   
 
+  root :to =>'home#index'
+
   #admin routes
   namespace :admin do
 
