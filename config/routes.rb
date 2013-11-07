@@ -4,7 +4,13 @@ Thenoticeboard::Application.routes.draw do
   
 
   root :to =>'home#index'
-
+ 
+  match 'home' => 'home#home'
+  match 'about' => 'home#about'
+  match 'blog' => 'home#blog'
+  match 'blog_timeline' => 'home#blog_timeline'
+  match 'contact' => 'home#contact'
+  match 'shop' => 'home#shop'
   #admin routes
   namespace :admin do
 
