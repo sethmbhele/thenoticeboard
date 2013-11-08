@@ -68,8 +68,8 @@ Thenoticeboard::Application.configure do
   :address              => "smtp.gmail.com",
   :port                 => 587,
   :domain               => 'gmail.com',
-  :user_name            => 'genknooz3@gmail.com',
-  :password             => 'genknooz!',
+  :user_name            => 'websites.tester@gmail.com',
+  :password             => 'infosolution1',
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
 
