@@ -13,6 +13,16 @@ glyphicons-halflings.png: glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.
 glyphicons-halflings/index.png: glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png
 logo.png: logo-a1675e4e40ee8be37c4bd9a0d9125032.png
 logo/index.png: logo-a1675e4e40ee8be37c4bd9a0d9125032.png
+logo1.png: logo1-c584b8da88bc58385b9114e127834f60.png
+logo1/index.png: logo1-c584b8da88bc58385b9114e127834f60.png
+marker.png: marker-4b55095aabed07affada5daf209ba7bc.png
+marker/index.png: marker-4b55095aabed07affada5daf209ba7bc.png
+marker_shadow.png: marker_shadow-30f878eea2b632fd26c86c5409822211.png
+marker_shadow/index.png: marker_shadow-30f878eea2b632fd26c86c5409822211.png
+pattern1.png: pattern1-ab0a8e17f3cb85ca0f5ebcec45e3756f.png
+pattern1/index.png: pattern1-ab0a8e17f3cb85ca0f5ebcec45e3756f.png
+pattern2.png: pattern2-8b50f7a546e3792023aafc0cdd0606dc.png
+pattern2/index.png: pattern2-8b50f7a546e3792023aafc0cdd0606dc.png
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 application.js: application-bbae3cb9ca854f12dab7f26251e69c84.js

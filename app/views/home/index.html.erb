@@ -35,8 +35,8 @@
 							<a href="" class="icon-youtube"></a>
 							<a href="" class="icon-google-plus"></a>
 						</li>
-						<li class="inverse"><a href="login.html?lang=en&amp;style=style-default-menus-light" class="glyphicons unlock no-ajaxify"><i></i> Sign in</a></li>
-						<li class="primary"><a href="signup.html?lang=en&amp;style=style-default-menus-light" class="glyphicons user_add no-ajaxify"><i></i> Sign up</a></li>
+						<li class="inverse"><a href="" class="glyphicons unlock no-ajaxify"><i></i> Sign in</a></li>
+						<li class="primary"><a href="" class="glyphicons user_add no-ajaxify"><i></i> Sign up</a></li>
 					</ul>
 					<div class="clearfix"></div>
 					
@@ -46,8 +46,8 @@
 			<div class="container-960">
 			
 			<!-- Brand -->
-			<a href="index.html?lang=en&amp;style=style-default-menus-light" class="appbrand pull-left"><img src="../../common/theme/images/logo.png"></a>
-			
+			<!-- <a href="index.html?lang=en&amp;style=style-default-menus-light" class="appbrand pull-left"><img src="../../common/theme/images/logo.png"></a> -->
+			<%=  link_to image_tag('../assets/logo1.png',:border=>"none"),root_path, :class =>"appbrand pull-left" %>
 			<ul class="topnav pull-right">
 				
 				<li class="active">
@@ -517,7 +517,19 @@ AND </div>
 					<div class="span2">
 						<h4>Quick Links</h4>
 						<ul>
-							<li><a href="home">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pricing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Blog &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact</a></li>
+						<li><!-- <a href="index.html?lang=en&amp;style=style-default-menus-light">Home</a> -->
+							<%= link_to "Home", home_path %>
+							</li>
+							<li><!-- <a href="about.html?lang=en&amp;style=style-default-menus-light">About</a> -->
+							<%= link_to "About", about_path %></li>
+							<li><a href="">Pricing</a></li>
+							<li><!-- <a href="blog.html?lang=en&amp;style=style-default-menus-light">Blog</a> -->
+							<%= link_to "Blog", blog_path %>
+							</li>
+							<li><!-- <a href="contact.html?lang=en&amp;style=style-default-menus-light">Contact</a> -->
+							<%= link_to "Contact", contact_path %>
+							</li>
+							<!-- <li><a href="home">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pricing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Blog &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact</a></li> -->
 							
 						</ul>
 					</div>

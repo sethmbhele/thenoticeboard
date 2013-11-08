@@ -11,6 +11,7 @@ Thenoticeboard::Application.routes.draw do
   match 'blog_timeline' => 'home#blog_timeline'
   match 'contact' => 'home#contact'
   match 'shop' => 'home#shop'
+  match 'index_slider' => 'home#index_slider'
   #admin routes
   namespace :admin do
 

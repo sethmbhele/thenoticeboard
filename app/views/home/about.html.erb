@@ -34,8 +34,8 @@
 							<a href="" class="icon-youtube"></a>
 							<a href="" class="icon-google-plus"></a>
 						</li>
-						<li class="inverse"><a href="login.html?lang=en&amp;style=style-default-menus-light" class="glyphicons unlock no-ajaxify"><i></i> Sign in</a></li>
-						<li class="primary"><a href="signup.html?lang=en&amp;style=style-default-menus-light" class="glyphicons user_add no-ajaxify"><i></i> Sign up</a></li>
+						<li class="inverse"><a href="" class="glyphicons unlock no-ajaxify"><i></i> Sign in</a></li>
+						<li class="primary"><a href="" class="glyphicons user_add no-ajaxify"><i></i> Sign up</a></li>
 					</ul>
 					<div class="clearfix"></div>
 					
@@ -45,27 +45,31 @@
 			<div class="container-960">
 			
 			<!-- Brand -->
-			<a href="index.html?lang=en&amp;style=style-default-menus-light" class="appbrand pull-left"><img src="../../common/theme/images/logo.png"></a>
-			
+			<!-- <a href="index.html?lang=en&amp;style=style-default-menus-light" class="appbrand pull-left"><img src="../../common/theme/images/logo.png"></a> -->
+			<%=  link_to image_tag('../assets/logo1.png',:border=>"none"),root_path, :class =>"appbrand pull-left" %>
+
 			<ul class="topnav pull-right">
 				
 				<li class="dropdown dd-1">
 					<a href="" data-toggle="dropdown">Home<span class="caret"></span></a>
 					<ul class="dropdown-menu pull-left">
-						<li class=""><a href="index.html?lang=en&amp;style=style-default-menus-light">Home page #1</a></li>
-						<li class=""><a href="index_2.html?lang=en&amp;style=style-default-menus-light">Home page #2</a></li>
-						<li class=""><a href="index_slider.html?lang=en&amp;style=style-default-menus-light">Revolution Slider Fixed</a></li>
-						<li class=""><a href="index.html?lang=en&amp;style=style-default-menus-light">Revolution Slider Wide</a></li>
+					<li class=""><%= link_to "Home", root_path %></li>
+						<li class=""><%= link_to "Home page", home_path %></li>
+						<!-- <li class=""><a href="index_2.html?lang=en&amp;style=style-default-menus-light">Home page #2</a></li> --> 
+						<li class="">
+							<%= link_to "Revolution Slider Fixed", index_slider_path %>
+						</li>
+						<!-- <li class=""><a href="index.html?lang=en&amp;style=style-default-menus-light">Revolution Slider Wide</a></li> -->
 					</ul>
 				</li>
 				<li><%= link_to "About", about_path %></li>
-				<li><a href="pricing.html?lang=en&amp;style=style-default-menus-light">Pricing</a></li>
+				<!-- <li><a href="pricing.html?lang=en&amp;style=style-default-menus-light">Pricing</a></li> -->
 				<li class="dropdown dd-1">
 					<a href="" data-toggle="dropdown">Shop <span class="caret"></span></a>
 					<ul class="dropdown-menu pull-left">
-						<li class=""><a href="shop.html?lang=en&amp;style=style-default-menus-light">Catalog</a></li>
-						<li class=""><a href="shop_product.html?lang=en&amp;style=style-default-menus-light">Product page</a></li>
-						<li class=""><a href="shop_cart.html?lang=en&amp;style=style-default-menus-light">Shopping Cart</a></li>
+						<li class=""><%= link_to "Catalog", shop_path %><!-- <a href="shop.html?lang=en&amp;style=style-default-menus-light">Catalog</a> --></li>
+						<li class=""><a href="">Product page</a></li>
+						<li class=""><a href="">Shopping Cart</a></li>
 					</ul>
 				</li>
 				<li class="dropdown dd-1 active">
@@ -235,11 +239,16 @@
 					<div class="span2">
 						<h4>Quick Links</h4>
 						<ul>
-							<li><a href="index.html?lang=en&amp;style=style-default-menus-light">Home</a></li>
-							<li><a href="about.html?lang=en&amp;style=style-default-menus-light">About</a></li>
-							<li><a href="pricing.html?lang=en&amp;style=style-default-menus-light">Pricing</a></li>
-							<li><a href="blog.html?lang=en&amp;style=style-default-menus-light">Blog</a></li>
-							<li><a href="contact.html?lang=en&amp;style=style-default-menus-light">Contact</a></li>
+							<li><!-- <a href="index.html?lang=en&amp;style=style-default-menus-light">Home</a> -->
+							<%= link_to "Home page", home_path %></li>
+							<li><!-- <a href="about.html?lang=en&amp;style=style-default-menus-light">About</a> -->
+							<%= link_to "About", about_path %></li>
+							<li><a href="">Pricing</a></li>
+							<li><!-- <a href="blog.html?lang=en&amp;style=style-default-menus-light">Blog</a> -->
+							<%= link_to "Blog", blog_path %></li>
+							<li><!-- <a href="contact.html?lang=en&amp;style=style-default-menus-light">Contact</a> -->
+							<%= link_to "Contact", contact_path %>
+							</li>
 						</ul>
 					</div>
 					<div class="span4">
