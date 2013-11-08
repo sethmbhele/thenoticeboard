@@ -70,11 +70,10 @@ config.action_mailer.default_url_options = { :host => 'thenoticeboard.herokuapp.
   :address              => "smtp.gmail.com",
   :port                 => 587,
   :domain               => 'gmail.com',
-  :user_name            => 'websites.tester@gmail.com',
-  :password             => 'infosolution1',
+  :user_name            => 'nxtkim@gmail.com',
+  :password             => 'netwininfo',
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
-
 
   config.action_mailer.raise_delivery_errors = true
  
