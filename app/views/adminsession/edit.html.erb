@@ -1,0 +1,98 @@
+<!-- <h2>Edit <%= resource_name.to_s.humanize %></h2> -->
+
+<script> 
+$(document).ready(function() {
+    $("#changepassword_form").validate({        
+        onkeydown: false,
+        onfocusout: false,
+        onclick: false,
+        rules:{
+                "adminuser[current_password]": { required:true },
+                "adminuser[password]":{ required:true,
+                                             minlength:6 },
+                "adminuser[password_confirmation]":{required:true, equalTo:"#adminuser_password" }
+
+            },
+        messages: {
+            "adminuser[current_password]":{required: 'Please enter current password'} ,
+            "adminuser[password]": {required: 'Please enter new password '},
+            "adminuser[password_confirmation]": {required: 'Please enter confirm password',equalTo: 'Please enter new password again'}
+        }             
+    });
+});
+</script>
+
+<%=form_for(resource, :as => resource_name,:url => admin_root_path,:html => {:id => "changepassword_form",:method => :put }) do |f| %>
+  
+  <table border=0 width="95%" align="center" cellspacing="0" cellpadding="2">
+  <tr>
+  <td width="25px">    
+  </td>
+  <td> 
+  <table  border="0" cellspacing="0" cellpadding="2" width="700" align="center">
+   <tr>
+    <td></td>
+    <td><span style="color:red"><%= devise_error_messages! %></span></td>
+  </tr>  
+  <tr>
+    <td></td>
+    <td style="color:red">*indicates required fields</td>
+  </tr>  
+  <tr>
+        <td width="133" align="right" valign="top">
+            <div class="black12">Current Password:<span style="color:#ff0000;">*</span></div>
+        </td>
+        <td align="left">
+            <div class="input">   
+             <%= f.password_field :current_password,:style=>"width:242px;height:18px;border:none" %>
+            </div>  
+        </td>
+  </tr>
+  <tr>
+        <td width="133" align="right" valign="top">
+            <div class="black12">New Password:<span style="color:#ff0000;">*</span></div>
+        </td>
+        <td align="left">
+            <div class="input">   
+              <%= f.password_field :password, :autocomplete => "off",:style=>"width:242px;height:18px;border:none" %>
+            </div>  
+        </td>
+  </tr>
+  <tr>   
+      <td width="133" align="right" valign="top">
+            <div class="black12">Confirm Password:<span style="color:#ff0000;">*</span></div>
+        </td>
+        <td align="left">
+            <div class="input">   
+            <%= f.password_field :password_confirmation,:style=>"width:242px;height:18px;border:none"%>
+            </div>  
+        </td>
+  </tr>
+  <tr>
+      <td></td>
+  </tr>  
+  <tr>
+      <td>&nbsp;</td>
+      <td>
+      <table>  
+            <tr>
+            <td>
+                <%= f.submit "Update",:class =>"button" %> 
+            </td>
+            <td>
+                  <div class="link_button">  
+                  <%=link_to "Back",admin_root_path,:method => :get,:style =>"color:#FFF" %>
+                  </div> 
+                  </td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+  </table>
+  <% end %> 
+  
+</td>
+</tr>
+</table>
+
+

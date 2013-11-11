@@ -3,6 +3,8 @@ Thenoticeboard::Application.routes.draw do
 
   
 
+  #devise_for :users
+
   root :to =>'home#index'
  
   match 'home' => 'home#home'
@@ -30,11 +32,14 @@ Thenoticeboard::Application.routes.draw do
 
   end  
 
+devise_for :users 
+
 
 devise_for :adminusers,:controllers => { :registrations => "adminsession",:sessions => "adminregistration" } do
- 
    
 end
+
+
 
 
   # The priority is based upon order of creation:
