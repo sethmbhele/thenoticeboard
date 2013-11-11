@@ -1,5 +1,4 @@
-
-	<!-- Main Container Fluid -->
+<!-- Main Container Fluid -->
 	<div class="container-fluid menu-hidden">
 		
 		<!-- Content -->
@@ -24,7 +23,7 @@
 					<ul class="topnav pull-right">
 						
 												<!-- Themer -->
-						<!-- <li class="hidden-phone"><a href="#themer" data-toggle="collapse" class="glyphicons eyedropper single-icon"><i></i></a></li> -->
+					<!--	<!-- <li class="hidden-phone"><a href="#themer" data-toggle="collapse" class="glyphicons eyedropper single-icon"><i></i></a></li> -->
 						<!-- // Themer END -->
 												
 						<li class="hidden-phone follow">
@@ -34,8 +33,8 @@
 							<a href="" class="icon-youtube"></a>
 							<a href="" class="icon-google-plus"></a>
 						</li>
-						<li class="inverse"><a href="" class="glyphicons unlock no-ajaxify"><i></i> Sign in</a></li>
-						<li class="primary"><a href="" class="glyphicons user_add no-ajaxify"><i></i> Sign up</a></li>
+						<li class="inverse"><a href="login.html?lang=en&amp;style=style-default-menus-light" class="glyphicons unlock no-ajaxify"><i></i> Sign in</a></li>
+						<li class="primary"><a href="signup.html?lang=en&amp;style=style-default-menus-light" class="glyphicons user_add no-ajaxify"><i></i> Sign up</a></li>
 					</ul>
 					<div class="clearfix"></div>
 					
@@ -45,41 +44,22 @@
 			<div class="container-960">
 			
 			<!-- Brand -->
-			<a href="" class="appbrand pull-left"><img src="../../common/theme/images/logo.png"></a>
-			<%#=  link_to image_tag('/assets/logo1.png',:border=>"none"),root_path, :class =>"appbrand pull-left" %>
-
+			<a href="index.html?lang=en&amp;style=style-default-menus-light" class="appbrand pull-left"><img src="../../common/theme/images/logo.png"></a>
+			
 			<ul class="topnav pull-right">
 				
-				<li class="dropdown dd-1">
-					<a href="" data-toggle="dropdown">Home<span class="caret"></span></a>
-					<ul class="dropdown-menu pull-left">
-					<li class=""><%= link_to "Home", root_path %></li>
-						<li class=""><%= link_to "Home page", home_path %></li>
-						<!-- <li class=""><a href="index_2.html?lang=en&amp;style=style-default-menus-light">Home page #2</a></li> --> 
-						<li class="">
-							<%= link_to "Revolution Slider Fixed", index_slider_path %>
-						</li>
-						<!-- <li class=""><a href="index.html?lang=en&amp;style=style-default-menus-light">Revolution Slider Wide</a></li> -->
-					</ul>
+				<li>
+					<a href="index.html">Home<span class="caret"></span></a>
 				</li>
-				<li><%= link_to "About", about_path %></li>
-				<!-- <li><a href="pricing.html?lang=en&amp;style=style-default-menus-light">Pricing</a></li> -->
+				<li class="active"><a href="about.html?lang=en&amp;style=style-default-menus-light">About</a></li>
 				<li class="dropdown dd-1">
-					<a href="" data-toggle="dropdown">Shop <span class="caret"></span></a>
-					<ul class="dropdown-menu pull-left">
-						<li class=""><%= link_to "Catalog", shop_path %><!-- <a href="shop.html?lang=en&amp;style=style-default-menus-light">Catalog</a> --></li>
-						<li class=""><a href="">Product page</a></li>
-						<li class=""><a href="">Shopping Cart</a></li>
-					</ul>
-				</li>
-				<li class="dropdown dd-1 active">
 					<a href="" data-toggle="dropdown">Blog <span class="caret"></span></a>
 					<ul class="dropdown-menu pull-right">
-						<li class=" active"><%= link_to "Blog Posts", blog_path %></li>
-						<li class=""><%= link_to "Blog Timeline", blog_timeline_path %></li>
+						<li class=""><a href="blog.html?lang=en&amp;style=style-default-menus-light">Blog Posts</a></li>
+						<li class=""><a href="blog_timeline.html?lang=en&amp;style=style-default-menus-light">Blog Timeline</a></li>
 					</ul>
 				</li>
-				<li><%= link_to "Contact", contact_path %></li>
+				<li><a href="contact.html?lang=en&amp;style=style-default-menus-light">Contact</a></li>
 				
 			</ul>
 			<div class="clearfix"></div>
@@ -88,146 +68,252 @@
 			</div>
 			
 		</div>
-		<!-- Top navbar END --><div class="container-960 innerT">
+		<!-- Top navbar END --><div class="container-960 innerTB">
 
-	<h3 class="glyphicons notes"><i></i>Blog</h3>
+	<h3 class="glyphicons circle_info margin-none"><i></i>About Us</h3>
+	<div class="separator bottom"></div>
+
+	<div class="widget widget-heading-simple widget-body-gray">
+		<div class="widget-body"><p class="lead center margin-none">Lorem Ipsum Dolor.</p></div>
+	</div>
+	
+	<!-- Row -->
+	<div class="row-fluid">
+	
+		<!-- Thumbnails -->
+		<ul class="thumbnails">
+		
+			<!-- Column -->
+			<li class="span4">
+			
+				<!-- Thumbnail -->
+				<div class="thumbnail widget-thumbnail">
+					<img data-src="holder.js/100%x200" alt="100%x200 Image Holder" />
+					<div class="caption">
+						<h4>John Doe</h4>
+						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						
+						<!-- Social Icons -->
+						<a href="" class="glyphicons standard primary facebook"><i></i></a>
+						<a href="" class="glyphicons standard twitter"><i></i></a>
+						<a href="" class="glyphicons standard linked_in"><i></i></a>
+						<div class="clearfix"></div>
+						<!-- // Social Icons END -->
+					</div>
+				</div>
+				<!-- // Thumbnail END -->
+				
+			</li>
+			<!-- // Column END -->
+			
+			<!-- Column -->
+			<li class="span4">
+			
+				<!-- Thumbnail -->
+				<div class="thumbnail widget-thumbnail">
+					<img data-src="holder.js/100%x200" alt="100%x200 Image Holder" />
+					<div class="caption">
+						<h4>Jane Doe</h4>
+						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						
+						<!-- Social Icons -->
+						<a href="" class="glyphicons standard primary facebook"><i></i></a>
+						<a href="" class="glyphicons standard twitter"><i></i></a>
+						<a href="" class="glyphicons standard linked_in"><i></i></a>
+						<div class="clearfix"></div>
+						<!-- // Social Icons END -->
+					</div>
+				</div>
+				<!-- // Thumbnail END -->
+				
+			</li>
+			<!-- // Column END -->
+			
+			<!-- Column -->
+			<li class="span4">
+			
+				<!-- Thumbnail -->
+				<div class="thumbnail widget-thumbnail">
+					<img data-src="holder.js/100%x200" alt="100%x200 Image Holder" />
+					<div class="caption">
+						<h4>John Doe</h4>
+						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						
+						<!-- Social Icons -->
+						<a href="" class="glyphicons standard primary facebook"><i></i></a>
+						<a href="" class="glyphicons standard twitter"><i></i></a>
+						<a href="" class="glyphicons standard linked_in"><i></i></a>
+						<div class="clearfix"></div>
+						<!-- // Social Icons END -->
+					</div>
+				</div>
+				<!-- // Thumbnail END -->
+				
+			</li>
+			<!-- // Column END -->
+			
+		</ul>
+		<!-- // Thumbnails END -->
+		
+	</div>
+	<!-- // Row END -->
+	
+	<p class="separator text-center"><i class="icon-ellipsis-horizontal icon-3x"></i></p>
 	<div class="separator bottom"></div>
 
 	<div class="row-fluid">
-		<div class="span3">
+		<div class="span6">
 		
-			<!-- Widget -->
-			<div class="widget widget-heading-simple widget-body-gray">
-				<div class="widget-body list">
-				
-					<!-- List -->
-					<ul>
-						<li>
-							<a href="">Make Up</a>
-							<span class="badge">35</span>
-						</li>
-						<li>
-							<a href="">Fragrances</a>
-							<span class="badge">30</span>
-						</li>
-						<li>
-							<a href="">Nails</a>
-							<span class="badge">19</span>
-						</li>
-						<li>
-							<a href="">Hair Products</a>
-							<span class="badge">33</span>
-						</li>
-						<li>
-							<a href="">Accessories</a>
-							<span class="badge">17</span>
-						</li>
-					</ul>
-					<!-- // List END -->
-					
+			<div class="widget widget-heading-simple widget-body-white">
+				<div class="widget-body">
+					<div class="innerL">
+						<div class="separator bottom"></div>
+						<div class="glyphicons glyphicon-large shield">
+							<i></i>
+							<h4>Lorem Ipsum Dolor</h4>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an <br/> <a href="">learn more</a></p>
+						</div>
+						<div class="separator bottom"></div>
+						<div class="glyphicons glyphicon-large group">
+							<i></i>
+							<h4>Lorem Ipsum Dolor</h4>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an <br/> <a href="">learn more</a></p>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!-- // Widget END -->
-			
-			<p class="separator text-center"><i class="icon-ellipsis-horizontal icon-3x"></i></p>
-			
-			<div class="widget widget-heading-simple widget-body-default">
-				<div class="widget-head"><h4 class="heading glyphicons warning_sign strong"><i></i>Important note</h4></div>
-				<div class="widget-body"><p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat massa, ultricies sit amet.</p></div>
-			</div>
-			
-			<p class="separator text-center"><i class="icon-ellipsis-horizontal icon-3x"></i></p>
-			
-			<div class="widget widget-heading-simple widget-body-gray">
-				<div class="widget-head"><h4 class="heading glyphicons tags strong"><i></i>Labels</h4></div>
-				<div class="widget-body center"><span class="label">responsive blog</span> <span class="label">12 column grid</span> <span class="label">awesome</span> <span class="label">mobile first</span> <span class="label">easy development</span> <span class="label">html template</span></div>
-			</div>
-		
+	
 		</div>
-		<div class="span9">
+		<div class="span6">
 		
 			<div class="widget widget-heading-simple widget-body-white">
 				<div class="widget-body">
-					<div class="row-fluid">	
-						<div class="span4 center">
-							<a href="" class="thumb"><img src="../../common/theme/images/gallery-2/2.jpg" alt="Image" /></a>
-						</div>
-						<div class="span8">
-							<h5 class="strong text-uppercase">What is Lorem Ipsum?</h5>
-							<span class="glyphicons single regular user"><i></i> by <a href="">mosaicpro</a></span>
-							<span class="glyphicons single regular calendar"><i></i> on 15th June, 2013</span>
-							<span class="glyphicons single regular comments"><i></i> 15 comments</span>
-							<div class="separator bottom"></div>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-							<p class="margin-none strong"><a href="" class="glyphicons single chevron-right"><i></i>read more</a></p>
-						</div>
+					
+					<div class="separator bottom"></div>
+					<div class="glyphicons glyphicon-large iphone">
+						<i></i>
+						<h4>Lorem Ipsum Dolor</h4>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an <br/> <a href="">learn more</a></p>
 					</div>
-				</div>
-			</div>
+				
+					<div class="separator bottom"></div>
+					<div class="glyphicons glyphicon-large magic group-column">
+						<i></i>
+						<h4>Lorem Ipsum Dolor</h4>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an <br/> <a href="">learn more</a></p>
+					</div>
 			
-			<div class="widget widget-heading-simple widget-body-white">
-				<div class="widget-body">
-					<div class="row-fluid">	
-						<div class="span6">
-							<h5 class="strong text-uppercase">What is Lorem Ipsum?</h5>
-							<span class="glyphicons single regular user"><i></i> by <a href="">mosaicpro</a></span>
-							<span class="glyphicons single regular calendar"><i></i> on 15th June, 2013</span>
-							<div class="separator bottom"></div>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-							<p class="margin-none strong">
-								<a href="" class="glyphicons single chevron-right"><i></i>read more</a>
-								<span class="glyphicons single regular comments"><i></i> 15 comments</span>
-							</p>
-						</div>
-						<div class="span6 center">
-							<a href="" class="thumb"><img src="../../common/theme/images/gallery-2/4.jpg" alt="Image" /></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="widget widget-heading-simple widget-body-white">
-				<div class="widget-body">
-					<div class="row-fluid">
-						<div class="span6 center">
-							<a href="" class="thumb"><img src="../../common/theme/images/gallery-2/7.jpg" alt="Image" /></a>
-						</div>	
-						<div class="span6">
-							<h5 class="strong text-uppercase">What is Lorem Ipsum?</h5>
-							<span class="glyphicons single regular user"><i></i> by <a href="">mosaicpro</a></span>
-							<span class="glyphicons single regular calendar"><i></i> on 15th June, 2013</span>
-							<div class="separator bottom"></div>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-							<p class="margin-none strong">
-								<a href="" class="glyphicons single chevron-right"><i></i>read more</a>
-								<span class="glyphicons single regular comments"><i></i> 15 comments</span>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="widget widget-heading-simple widget-body-gray">
-				<div class="widget-body">
-					<div class="row-fluid">	
-						<div class="span8">
-							<h5 class="strong text-uppercase">What is Lorem Ipsum?</h5>
-							<span class="glyphicons single regular user"><i></i> by <a href="">mosaicpro</a></span>
-							<span class="glyphicons single regular calendar"><i></i> on 15th June, 2013</span>
-							<span class="glyphicons single regular comments"><i></i> 15 comments</span>
-							<div class="separator bottom"></div>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-							<p class="margin-none strong"><a href="" class="glyphicons single chevron-right"><i></i>read more</a></p>
-						</div>
-						<div class="span4 center">
-							<a href="" class="thumb"><img src="../../common/theme/images/gallery-2/8.jpg" alt="Image" /></a>
-						</div>
-					</div>
 				</div>
 			</div>
 		
 		</div>
 	</div>
+	
+	<p class="separator text-center"><i class="icon-ellipsis-horizontal icon-3x"></i></p>
+	<div class="separator bottom"></div>
+	
+	<div class="row-fluid">
+		<div class="span6">
+		
+			<!-- Carousel -->
+			<div class="widget widget-heading-simple widget-body-simple">
+				<div class="widget-body">
+					<div class="carousel carousel-1 slide" id="myCarousel2">
+						<div class="carousel-inner">
+														<!-- Item -->
+							<div class="item active">
+								<div class="row-fluid">
+									<div class="span5 relativeWrap">
+										<div class="carousel-caption">
+											<h4>Lorem Ipsum !</h4>
+											<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.<br/> <a href="" target="_blank">Buy QuickAdmin</a></p>
+										</div>
+									</div>
+									<div class="span7">
+										<img src="../../common/theme/images/gallery-2/8.jpg" alt="" />
+									</div>
+								</div>
+							</div>
+							<!-- // Item END -->
+														<!-- Item -->
+							<div class="item">
+								<div class="row-fluid">
+									<div class="span5 relativeWrap">
+										<div class="carousel-caption">
+											<h4>Lorem Ipsum !</h4>
+											<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.<br/> <a href="" target="_blank">Buy QuickAdmin</a></p>
+										</div>
+									</div>
+									<div class="span7">
+										<img src="../../common/theme/images/gallery-2/9.jpg" alt="" />
+									</div>
+								</div>
+							</div>
+							<!-- // Item END -->
+														<!-- Item -->
+							<div class="item">
+								<div class="row-fluid">
+									<div class="span5 relativeWrap">
+										<div class="carousel-caption">
+											<h4>Lorem Ipsum !</h4>
+											<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.<br/> <a href="" target="_blank">Buy QuickAdmin</a></p>
+										</div>
+									</div>
+									<div class="span7">
+										<img src="../../common/theme/images/gallery-2/10.jpg" alt="" />
+									</div>
+								</div>
+							</div>
+							<!-- // Item END -->
+													</div>
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel2" data-slide-to="1"></li>
+							<li data-target="#myCarousel2" data-slide-to="2"></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- // Carousel END -->
+	
+		</div>
+		<div class="span6">
+		
+			<div class="widget widget-heading-simple widget-body-gray">
+				<div class="widget-body">
+					<h5>News</h5>
+					<div class="glyphicons circle_info">
+						<i></i>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Widget -->
+			<div class="widget widget-heading-simple widget-body-gray">
+					
+				<!-- Widget Heading -->
+				<div class="widget-head">
+					<h4 class="heading glyphicons twitter"><i></i>Twitter feed</h4>
+				</div>
+				<!-- // Widget Heading END -->
+				
+				<div class="widget-body">
+					<section class="twitter-feed">
+						<div class="row-fluid">
+							<div class="span12">
+								<div class="tweet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nunc lorem, rutrum non porta. <span class="label label-inverse">01/11/2012</span></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<!-- // Widget END -->
+		
+		</div>
+	</div>
+
 </div>	
 		</div>
 		<!-- // Content END -->
@@ -239,16 +325,11 @@
 					<div class="span2">
 						<h4>Quick Links</h4>
 						<ul>
-							<li><!-- <a href="index.html?lang=en&amp;style=style-default-menus-light">Home</a> -->
-							<%= link_to "Home page", home_path %></li>
-							<li><!-- <a href="about.html?lang=en&amp;style=style-default-menus-light">About</a> -->
-							<%= link_to "About", about_path %></li>
-							<li><a href="">Pricing</a></li>
-							<li><!-- <a href="blog.html?lang=en&amp;style=style-default-menus-light">Blog</a> -->
-							<%= link_to "Blog", blog_path %></li>
-							<li><!-- <a href="contact.html?lang=en&amp;style=style-default-menus-light">Contact</a> -->
-							<%= link_to "Contact", contact_path %>
-							</li>
+							<li><a href="index.html?lang=en&amp;style=style-default-menus-light">Home</a></li>
+							<li><a href="about.html?lang=en&amp;style=style-default-menus-light">About</a></li>
+							<li><a href="pricing.html?lang=en&amp;style=style-default-menus-light">Pricing</a></li>
+							<li><a href="blog.html?lang=en&amp;style=style-default-menus-light">Blog</a></li>
+							<li><a href="contact.html?lang=en&amp;style=style-default-menus-light">Contact</a></li>
 						</ul>
 					</div>
 					<div class="span4">
@@ -401,3 +482,4 @@
 	
 	<!-- Common Demo Script -->
 	<script src="../../common/theme/scripts/demo/common.js?1374506533"></script>
+	
