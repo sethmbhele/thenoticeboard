@@ -1,9 +1,6 @@
 Thenoticeboard::Application.routes.draw do
   
 
-  
-
-  #devise_for :users
 
   root :to =>'home#index'
  
@@ -14,11 +11,12 @@ Thenoticeboard::Application.routes.draw do
   match 'contact' => 'home#contact'
   match 'shop' => 'home#shop'
   match 'index_slider' => 'home#index_slider'
+  match 'profile' => "profile#index"
   #admin routes
   namespace :admin do
 
   root :to =>'dashboard#index'
-    #devise_for :adminusers
+   
   resources :categories do
     member do
         get "change_status"        
@@ -32,12 +30,22 @@ Thenoticeboard::Application.routes.draw do
 
   end  
 
-devise_for :users 
+  #user authentication routes
+  devise_for :users, :skip => [:sessions]
+     as :user do
+     get '/login'   => "devise/sessions#new",       :as => :new_user_session
+     post '/login'  => 'devise/sessions#create',    :as => :user_session
+     get '/signout'  => 'devise/sessions#destroy',   :as => :destroy_user_session
+     match '/signin' => "devise/sessions#signin", :as => :user_session_path
+     get '/signup'   => "devise/registrations#new",       :as => :new_user_registration
+  end
 
 
-devise_for :adminusers,:controllers => { :registrations => "adminsession",:sessions => "adminregistration" } do
+
+ #Admin routes
+ devise_for :adminusers,:controllers => { :registrations => "adminsession",:sessions => "adminregistration" } do
    
-end
+ end
 
 
 

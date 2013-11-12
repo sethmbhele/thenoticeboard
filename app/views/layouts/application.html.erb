@@ -37,10 +37,10 @@
 	<!--<link href="../../common/theme/scripts/plugins/system/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
 	
 	<!-- MiniColors ColorPicker Plugin -->
-	<link href="../../common/theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.css" rel="stylesheet" />
+	<link href="/common/theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.css" rel="stylesheet" />
 	
 	<!-- Google Code Prettify Plugin -->
-	<link href="../../common/theme/scripts/plugins/other/google-code-prettify/prettify.css" rel="stylesheet" />
+	<link href="/common/theme/scripts/plugins/other/google-code-prettify/prettify.css" rel="stylesheet" />
 
 	<!-- REVOLUTION BANNER CSS SETTINGS -->
 	<link rel="stylesheet" type="text/css" href="../../common/theme/scripts/plugins/other/revolution-slider/css/settings.css" media="screen" />
@@ -53,21 +53,10 @@
 	<script src="/common/theme/scripts/plugins/system/less.min.js"></script>
 </head>
 <body>
-<%= yield %>
+<%= render 'layouts/header'%>
+
+			<%= yield %>
+
+<%= render 'layouts/footer'%>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <!-- <title>The Noticeboard</title> -->
-  <%#= stylesheet_link_tag    "application", :media => "all" %>
-  <%#= javascript_include_tag "application" %>
-  <%#= csrf_meta_tags %>
-</head>
-
- <body class="document-body login">
-<%#= yield %>
-
-</body>
-</html> -->

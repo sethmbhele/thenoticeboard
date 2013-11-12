@@ -27,8 +27,28 @@
 							<a href="" class="icon-youtube"></a>
 							<a href="" class="icon-google-plus"></a>
 						</li>
-						<li class="inverse"><a href="" class="glyphicons unlock no-ajaxify"><i></i> Sign in</a></li>
-						<li class="primary"><a href="" class="glyphicons user_add no-ajaxify"><i></i> Sign up</a></li>
+						<% if user_signed_in? %>
+						     <li class="inverse"><%= current_user.username %></li>
+						    
+						    <li class="primary"><i></i><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+						  <% else %>
+						    <%#= link_to "Sign up", new_user_registration_path %> <%#= link_to "sign in", new_user_session_path %>
+
+                           <li class="inverse">
+                           <!-- <span 
+                           class="glyphicons unlock no-ajaxify">
+							<i></i> -->
+							<%= link_to "sign in", new_user_session_path %>
+
+ 							<!-- </span> -->
+ 							</li>
+ 							
+							<li class="primary"><i></i><%= link_to "Sign up",
+							new_user_registration_path,:class => "glyphicons user_add no-ajaxify" %></li>
+							<% end %>
+						<!-- 
+						    <li class="inverse"><a href="" class="glyphicons unlock no-ajaxify"><i></i> Sign in</a></li>
+						<li class="primary"><a href="" class="glyphicons user_add no-ajaxify"><i></i> Sign up</a></li>  -->
 					</ul>
 					<div class="clearfix"></div>
 					

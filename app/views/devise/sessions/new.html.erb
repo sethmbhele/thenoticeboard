@@ -7,87 +7,7 @@
 		<!-- Content -->
 		<div id="content">
 		
-		<!-- Top navbar (note: add class "navbar-hidden" to close the navbar by default) -->
-		<div class="navbar main hidden-print">
-			
-			<div class="secondary">
-				<div class="container-960">
-				
-					<!-- Menu Toggle Button -->
-					<button type="button" class="btn btn-navbar visible-phone pull-right">
-						<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-					</button>
-					<!-- // Menu Toggle Button END -->
-					
-					<ul class="topnav pull-left">
-						<li><a href="" class="glyphicons search single-icon"><i></i></a></li>
-											</ul>
-					
-					<ul class="topnav pull-right">
-						
-												<!-- Themer -->
-						<!-- <li class="hidden-phone"><a href="#themer" data-toggle="collapse" class="glyphicons eyedropper single-icon"><i></i></a></li> -->
-						<!-- // Themer END -->
-												
-						<li class="hidden-phone follow">
-							<span>Follow us</span> 
-							<a href="" class="icon-facebook"></a>
-							<a href="" class="icon-twitter"></a>
-							<a href="" class="icon-youtube"></a>
-							<a href="" class="icon-google-plus"></a>
-						</li>
-						<li class="inverse active"><a href="login.html?lang=en&amp;style=style-default-menus-light" class="glyphicons unlock no-ajaxify"><i></i> Sign in</a></li>
-						<li class="primary"><a href="signup.html?lang=en&amp;style=style-default-menus-light" class="glyphicons user_add no-ajaxify"><i></i> Sign up</a></li>
-
-					</ul>
-					<div class="clearfix"></div>
-					
-				</div>
-			</div>
-			
-			<div class="container-960">
-			
-			<!-- Brand -->
-			<a href="index.html?lang=en&amp;style=style-default-menus-light" class="appbrand pull-left"><img src="../../common/theme/images/logo.png"></a>
-			
-			<ul class="topnav pull-right">
-				
-				<li class="dropdown dd-1">
-					<a href="" data-toggle="dropdown">Home<span class="caret"></span></a>
-					<ul class="dropdown-menu pull-left">
-						<li class=""><a href="index.html?lang=en&amp;style=style-default-menus-light">Home page #1</a></li>
-						<li class=""><a href="index_2.html?lang=en&amp;style=style-default-menus-light">Home page #2</a></li>
-						<li class=""><a href="index_slider.html?lang=en&amp;style=style-default-menus-light">Revolution Slider Fixed</a></li>
-						<li class=""><a href="index.html?lang=en&amp;style=style-default-menus-light">Revolution Slider Wide</a></li>
-					</ul>
-				</li>
-				<li><a href="about.html?lang=en&amp;style=style-default-menus-light">About</a></li>
-				<li><a href="pricing.html?lang=en&amp;style=style-default-menus-light">Pricing</a></li>
-				<li class="dropdown dd-1">
-					<a href="" data-toggle="dropdown">Shop <span class="caret"></span></a>
-					<ul class="dropdown-menu pull-left">
-						<li class=""><a href="shop.html?lang=en&amp;style=style-default-menus-light">Catalog</a></li>
-						<li class=""><a href="shop_product.html?lang=en&amp;style=style-default-menus-light">Product page</a></li>
-						<li class=""><a href="shop_cart.html?lang=en&amp;style=style-default-menus-light">Shopping Cart</a></li>
-					</ul>
-				</li>
-				<li class="dropdown dd-1">
-					<a href="" data-toggle="dropdown">Blog <span class="caret"></span></a>
-					<ul class="dropdown-menu pull-right">
-						<li class=""><a href="blog.html?lang=en&amp;style=style-default-menus-light">Blog Posts</a></li>
-						<li class=""><a href="blog_timeline.html?lang=en&amp;style=style-default-menus-light">Blog Timeline</a></li>
-					</ul>
-				</li>
-				<li><a href="contact.html?lang=en&amp;style=style-default-menus-light">Contact</a></li>
-				
-			</ul>
-			<div class="clearfix"></div>
-			<!-- // Top Menu Right END -->
-			
-			</div>
-			
-		</div>
-		<!-- Top navbar END --><!-- Wrapper -->
+		
 <div id="login">
 
 	<div class="container">
@@ -100,14 +20,14 @@
 			<div class="widget widget-heading-simple widget-body-gray">
 				
 				<div class="widget-body">
-				
+				<span style="color:red"><%= alert %></span>
 					
 					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 					
 					<%= devise_error_messages! %>
-					<label>Username or Email</label>
+					<label>Email</label>
 						  
-						  <%= f.email_field :email, :autofocus => true, :placeholder => "Your Username or Email address", :class =>"input-block-level" %>
+						  <%= f.email_field :email, :autofocus => true, :placeholder => "Your Email", :class =>"input-block-level" %>
 								<label>Password<div class="password"><%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
 								  <%= link_to "forgot it?", new_password_path(resource_name) %><br />
 								<% end -%></div></label>
@@ -118,7 +38,8 @@
 						  <div class="row-fluid">
 							<div class="span8">
 								<div class="uniformjs">		
-								<div style="float:left"><%= f.check_box :remember_me,:class=>"checkbox" %></div> <div style="float:left"><%= f.label :remember_me %></div> </div>
+								<div style="float:left"><%= f.check_box :remember_me,:class=>"checkbox" %></div> <div style="float:left"><%= f.label :remember_me %></div>
+								 </div>
 							 	
 							</div>
 						  <% end -%>
@@ -135,7 +56,7 @@
 							
 				</div>
 				<div class="widget-footer">
-					<p class="glyphicons restart"><i></i>Please enter your username and password ...</p>
+					<p class="glyphicons restart"><i></i>Please enter your Email and password ...</p>
 				</div>
 			</div>
 			<!-- // Box END -->
@@ -149,62 +70,6 @@
 		</div>
 		<!-- // Content END -->
 		
-		<div id="footer" class="hidden-print">
-			
-			<div class="container-960 innerTB">
-				<div class="row-fluid">
-					<div class="span2">
-						<h4>Quick Links</h4>
-						<ul>
-							<li><a href="index.html?lang=en&amp;style=style-default-menus-light">Home</a></li>
-							<li><a href="about.html?lang=en&amp;style=style-default-menus-light">About</a></li>
-							<li><a href="pricing.html?lang=en&amp;style=style-default-menus-light">Pricing</a></li>
-							<li><a href="blog.html?lang=en&amp;style=style-default-menus-light">Blog</a></li>
-							<li><a href="contact.html?lang=en&amp;style=style-default-menus-light">Contact</a></li>
-						</ul>
-					</div>
-					<div class="span4">
-						<h4>About</h4>
-						<div class="box-generic">
-							Lorem Ipsum is simply dummy text of the printing and typesetting dustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</div>
-					</div>
-					<div class="span3">
-						<h4>Our Blog</h4>
-						<ul>
-							<li><a href="blog.html?lang=en&amp;style=style-default-menus-light">What is Lorem Ipsum?</a></li>
-							<li><a href="blog.html?lang=en&amp;style=style-default-menus-light">What is Lorem Ipsum?</a></li>
-							<li><a href="blog.html?lang=en&amp;style=style-default-menus-light">What is Lorem Ipsum?</a></li>
-							<li><a href="blog.html?lang=en&amp;style=style-default-menus-light">What is Lorem Ipsum?</a></li>
-							<li><a href="blog.html?lang=en&amp;style=style-default-menus-light">What is Lorem Ipsum?</a></li>
-						</ul>
-					</div>
-					<div class="span3">
-						<h4>Contact</h4>
-						<ul class="icons">
-							<li class="glyphicons phone"><i></i>01 230 1958</li>
-							<li class="glyphicons envelope"><i></i>info@thenoticeboard.co.za</li>
-						</ul>
-						
-						<h4>Social</h4>
-						<a href="" class="glyphicons standard primary facebook"><i></i></a>
-						<a href="" class="glyphicons standard twitter"><i></i></a>
-						<a href="" class="glyphicons standard linked_in"><i></i></a>
-						<a href="" class="glyphicons standard google_plus"><i></i></a>
-						<a href="" class="glyphicons standard vimeo"><i></i></a>
-					</div>
-				</div>
-				
-				<!--  Copyright Line -->
-				<div class="copy">
-					&copy; 2013 - <a href="http://www.digitalvoodoo.co" target="_blank">Digital Voodoo</a>
-					<span class="appbrand">The NoticeBoard</span>
-				</div>
-				<!--  End Copyright Line -->
-				
-			</div>
-	
-		</div>
 		<!-- // Footer END -->
 		
 	</div>
@@ -231,54 +96,7 @@
 		</div>
 	</div>
 </div>
-<!-- // Themer END -->
 
-	<!-- JQuery -->
-	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	
-	<!-- Code Beautify -->
-	<script src="../../common/theme/scripts/plugins/other/js-beautify/beautify.js"></script>
-	<script src="../../common/theme/scripts/plugins/other/js-beautify/beautify-html.js"></script>
-	
-	<!-- Global -->
-	<script>
-	var basePath = '',
-		commonPath = '../../common/';
-	</script>
-	
-	
-	<!-- Modernizr -->
-	<script src="../../common/theme/scripts/plugins/system/modernizr.js"></script>
-	
-	<!-- Bootstrap -->
-	<script src="../../common/bootstrap/js/bootstrap.min.js"></script>
-	
-	<!-- SlimScroll Plugin -->
-	<script src="../../common/theme/scripts/plugins/other/jquery-slimScroll/jquery.slimscroll.js"></script>
-	
-	<!-- MegaMenu -->
-	<script src="../../common/theme/scripts/demo/megamenu.js?1374506533"></script>
-	
-	<!-- jQuery ScrollTo Plugin -->
-	<!--[if gt IE 8]><!--><script src="http://balupton.github.io/jquery-scrollto/lib/jquery-scrollto.js"></script><!--<![endif]-->
-	
-	<!-- History.js -->
-	<!--[if gt IE 8]><!--><script src="http://browserstate.github.io/history.js/scripts/bundled/html4+html5/jquery.history.js"></script><!--<![endif]-->
-	
-	<!-- jQuery Ajaxify -->
-	<!--[if gt IE 8]><!--><script src="../../common/theme/scripts/plugins/system/jquery-ajaxify/ajaxify-html5.js"></script><!--<![endif]-->
-	
-	
-	<!-- Holder Plugin -->
-	<script src="../../common/theme/scripts/plugins/other/holder/holder.js?1374506533"></script>
-	
-	<!-- Uniform Forms Plugin -->
-	<script src="../../common/theme/scripts/plugins/forms/pixelmatrix-uniform/jquery.uniform.min.js"></script>
-
-	<!-- Common Demo Script -->
-	<script src="../../common/theme/scripts/demo/common.js?1374506533"></script>
-	
 </body>
-</html>
+
 

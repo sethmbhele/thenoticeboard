@@ -11,14 +11,16 @@
       <div class="widget widget-heading-simple widget-body-gray">
         
         <div class="widget-body">
-        
+         <%#= notice %>
+
+      <span style="color:red"><%= alert %></span>
           <!-- Form -->
           <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
           
           <%= devise_error_messages! %>
-          <label>Username or Email</label>
+          <label>Email</label>
               
-              <%= f.email_field :email, :autofocus => true, :placeholder => "Your Username or Email address", :class =>"input-block-level" %>
+              <%= f.email_field :email, :autofocus => true, :placeholder => "Your Username ", :class =>"input-block-level" %>
                 <label>Password<div class="password"><%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
                   <%= link_to "forgot it?", new_password_path(resource_name) %><br />
                 <% end -%></div></label>
@@ -61,7 +63,7 @@
               
         </div>
         <div class="widget-footer">
-          <p class="glyphicons restart"><i></i>Please enter your username and password ...</p>
+          <p class="glyphicons restart"><i></i>Please enter your Email and password ...</p>
         </div>
       </div>
       <!-- // Box END -->
