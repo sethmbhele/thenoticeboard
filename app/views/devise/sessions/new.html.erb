@@ -1,5 +1,5 @@
 
-<body class="login">
+<body>
 	
 	<!-- Main Container Fluid -->
 	<div class="container-fluid menu-hidden">
@@ -38,7 +38,9 @@
 						  <div class="row-fluid">
 							<div class="span8">
 								<div class="uniformjs">		
-								<div style="float:left"><%= f.check_box :remember_me,:class=>"checkbox" %></div> <div style="float:left"><%= f.label :remember_me %></div>
+								<div style="float:left">
+                                 
+								<%= f.check_box :remember_me %></div> <div style="float:left;padding-left:5px; "><%= f.label :remember_me,:class=>"checkbox" %></div>
 								 </div>
 							 	
 							</div>

@@ -1,0 +1,22 @@
+
+<div class="container-fluid menu-hidden">
+		
+		<!-- Content -->
+		<div id="content">
+		    <div class="container-960 innerT">
+		    <div class="table-responsive">
+				<table class="table-striped table-bordered">
+					The user profile  
+				<% if current_user %>
+				<tr>
+				  <td>  Username :</td><td>  <%= current_user.username %></td></tr>
+				  <tr>
+				<td>	Email :</td><td><%= current_user.email %></td>
+				</tr>
+
+				 <% end%>
+				</table>
+				</div>
+			</div>
+		</div>
+	</div>
