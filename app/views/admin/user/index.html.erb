@@ -1,0 +1,78 @@
+
+
+<%- model_class = User -%>
+<div class="mid_contain">
+                  
+<div style="width:100%;float:left">
+                                 
+                  <div class="page-header">
+                    <h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2>
+                  </div>
+                      <%=button_to "Add User",new_admin_user_path,:method =>"get",:class=>"btn btn-primary pull-right" %>
+                  <div style="margin:0 auto 20px auto;text-align:center; color:green">
+                            <p id="notice"><%= notice %></p>
+                  </div>
+         
+          
+          
+              
+            <table class="table table-bordered table-striped"  >
+              <thead>
+                <tr>               
+                  <th><%= model_class.human_attribute_name(:username) %></th> 
+                  <th><%= model_class.human_attribute_name(:email) %></th>                  
+                  
+                  <th><%= model_class.human_attribute_name(:start_date) %></th>  
+                  <th><%= model_class.human_attribute_name(:user_satus) %></th> 
+
+                  <th><%= model_class.human_attribute_name(:user_roles) %></th> 
+                  <th><%=t '.actions', :default => t("helpers.actions") %></th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <% @user.each_with_index do |user,i| %>
+                
+                  <tr>
+
+
+                <td height="30" align="left" valign="middle" ><%= user.username %></td>
+                
+                <td height="30" align="left" valign="middle" ><%= user.email %></td>
+                <td height="30" align="left" valign="middle" ><%= user.created_at %></td>
+                <td height="30" align="left" valign="middle" ><%= user.status %></td>
+                <td height="30" align="left" valign="middle" ><%= user.roles.collect {|n| n.name }.join(',') unless user.roles.blank? %></td>
+
+                <td width="280">
+                <%#= link_to 'Show' , :class=>"btn btn-primary pull-left"%>
+                <%= link_to 'Edit',edit_admin_user_path(user),:method => :get , :class=>"btn btn-block btn-inverse"%>
+                <%#if category.status==true%>
+               <%#= link_to 'Active', change_status_admin_category_path(category), :class=>"btn btn-primary pull-left" ,:confirm => 'Do you want  to inactivate category?' %>
+                <%#else%>
+                <%#= link_to 'Inactive', change_status_admin_category_path(category), :class=>"btn btn-primary pull-left",:confirm => 'Do you want to activate category?' %> 
+                <%#end%>
+                
+                <%= link_to 'Destroy', admin_user_path(user),:class=>"btn btn-block btn-danger", method: :delete, data: { confirm: 'Are you sure want to delete the category?' } %>
+                </td>
+                </tr>
+            <% end %> 
+                     <% if @user.empty? %>
+                      <tr>
+                       <td height="30" align="left" valign="middle" bgcolor="#f4f4f4" colspan="3">
+                          No Records Found
+                       </td> 
+                     </tr> 
+                    <% end %> 
+              
+              </tbody>
+            </table>
+    
+          </table>
+
+                
+              <div class="digg_pagination" width="100%" style="float:right">    
+                 <%#= will_paginate @user,:container => true %>
+            </div>
+    </div>
+
+</div>

@@ -2,6 +2,8 @@ Thenoticeboard::Application.routes.draw do
   
 
 
+  get "user/index"
+
   root :to =>'home#index'
  
   match 'home' => 'home#home'
@@ -16,7 +18,7 @@ Thenoticeboard::Application.routes.draw do
   namespace :admin do
 
   root :to =>'dashboard#index'
-   
+  resources :user
   resources :categories do
     member do
         get "change_status"        

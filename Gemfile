@@ -14,6 +14,8 @@ gem "less-rails"
 gem "heroku"
 gem 'meta_search'
 gem "auto_strip_attributes", "~> 1.0"
+gem "cancan", ">= 1.6.8"
+gem "rolify", ">= 3.2.0"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
