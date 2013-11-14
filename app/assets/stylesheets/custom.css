@@ -18,3 +18,12 @@
 {
     background-color: #fff;
 }
+.error
+{
+	color: red;
+}
+
+#error_explanation
+{
+	color: red;
+}

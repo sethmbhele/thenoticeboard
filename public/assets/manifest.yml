@@ -29,7 +29,7 @@ pattern2.png: pattern2-8b50f7a546e3792023aafc0cdd0606dc.png
 pattern2/index.png: pattern2-8b50f7a546e3792023aafc0cdd0606dc.png
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
-application.js: application-f9e0f21e5a23d3ba94d775c6e732929d.js
-application/index.js: application-f9e0f21e5a23d3ba94d775c6e732929d.js
-application.css: application-2198c6bffb238c8786d3df7be4b4313a.css
-application/index.css: application-2198c6bffb238c8786d3df7be4b4313a.css
+application.js: application-99627821e7f53646bfb6a61b2d0bc903.js
+application/index.js: application-99627821e7f53646bfb6a61b2d0bc903.js
+application.css: application-ad0ac3fea1eac3a155cdf32bf1b630f7.css
+application/index.css: application-ad0ac3fea1eac3a155cdf32bf1b630f7.css

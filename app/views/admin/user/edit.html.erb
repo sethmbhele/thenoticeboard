@@ -1,4 +1,36 @@
+<script>
+  
+  $(document).ready (function() {
 
+      
+    $("#edit_password").validate({
+      onclick: false,
+      rules:
+        {
+        "user[username]":{required: true},
+        "user[email]":{required: true,
+          email:true},
+       
+        "user[password]":{ required:true,
+          minlength:6 },
+        "user[password_confirmation]":{required:true,equalTo:"#newpassword"  },
+             "user[status]":{ required:true }
+             
+ 
+      },
+      messages: {
+        "user[username]":{required: 'Please enter username'} ,
+        "user[email]":{required: 'Please enter email'} ,
+         
+        "user[password]": {required: 'Please enter  password'},
+        "user[password_confirmation]":{required:"Please enter confirm password"},
+             "user[status]": {required: 'Please select user type'}
+         
+      }
+
+    });
+  });
+</script>
 <div class="mid_contain">
     
      <div align="left" width="80%">
@@ -17,7 +49,7 @@
           </div>
         </div>
         <div class="widget-body">
-
+<div><%= flash[:notice]%></div>
          <%= form_for(["admin",@user],:html => { :id => :edit_password}) do |f| %>
           <!-- Row -->
           <div class="row-fluid row-merge">
@@ -32,25 +64,35 @@
                 
                  <%= f.email_field :email, :autofocus => true, :class=>"input-block-level", :placeholder=>"Your Email"  %>
                  <label class="strong">User Status</label>
+
                  <%= f.select :status,options_for_select([["Active", "true"], ["Inactive", "false"]]),{:include_blank => "Select "}  %>
                   
-                 <%= @role.count %>
-                 <%= @role_except.count %>
+           <!-- Assigning roles -->
 
+          <% unless @role.empty? %>
           <label class="strong">Remove Role</label>
-                  <% @role.each do |r| %>
-
-                 
+                  <% @role.each do |r| %>             
                    <%= r.name %> <%=check_box_tag "deactive_role_ids[]", r.name %>
-                    <%=  image_tag('../assets/active.png',:title =>"Inactive",:border =>"none")  %>
+                      <img src="/assets/active.png" title="Active" />
+                    <%#=  image_tag('../assets/active.png',:title =>"Inactive",:border =>"none")  %>
                   <% end%>
+              <% end%>   
             <% unless @role_except.empty? %>
                 <label class="strong">Add Role</label>
                   <%  @role_except.each do |r| %>           
                    <%= r.name %> <%=check_box_tag "active_role_ids[]", r.name %>
-                    <%=  image_tag('../assets/deactive.png',:title =>"Inactive",:border =>"none")  %>
+                   <img src="/assets/deactive.png" title="Inactive" />
+                    <%#=  image_tag('../assets/deactive.png',:title =>"Inactive",:border =>"none")  %>
                   <% end%>
             <% end%>
+            <% if @role.empty? && @role_except.empty? %>
+             <label class="strong">Add Role</label>
+              <%  @role_all.each do |r| %>           
+                   <%= r.name %> <%=check_box_tag "active_role_ids[]", r.name %>
+                      <img src="/assets/active.png" title="Active" />
+                    <%#=  image_tag('../assets/deactive.png',:title =>"Inactive",:border =>"none")  %>
+                  <% end%>
+               <% end%>
         <label class="strong"></label>
 
                    <!-- <label class="strong">User Role</label>

@@ -109,6 +109,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="document-body ">
+ <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
 
 		<!-- Main Container Fluid -->
 	<div class="container-fluid menu-hidden sidebar-hidden-phone fluid menu-left">
