@@ -27,3 +27,8 @@
 {
 	color: red;
 }
+.user_body{
+	width:96%;
+	float:left;
+	margin:0 2%;
+}

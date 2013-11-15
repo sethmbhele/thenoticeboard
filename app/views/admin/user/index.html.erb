@@ -1,10 +1,10 @@
 
 
 <%- model_class = User -%>
-<div class="mid_contain">
                   
-<div style="width:100%;float:left">
-                                 
+<div class="user_body">
+         
+
                   <div class="page-header">
                     <h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2>
                   </div>
@@ -16,7 +16,7 @@
           
           
               
-            <table class="table table-bordered table-striped"  >
+            <table class="table-responsive table table-bordered table-striped"  >
               <thead>
                 <tr>               
                   <th><%= model_class.human_attribute_name(:username) %></th> 
@@ -36,14 +36,22 @@
                   <tr>
 
 
-                <td height="30" align="left" valign="middle" ><%= user.username %></td>
+                <td><%= user.username %></td>
                 
-                <td height="30" align="left" valign="middle" ><%= user.email %></td>
-                <td height="30" align="left" valign="middle" ><%= user.created_at %></td>
-                <td height="30" align="left" valign="middle" ><%= user.status %></td>
-                <td height="30" align="left" valign="middle" ><%= user.roles.collect {|n| n.name }.join(',') unless user.roles.blank? %></td>
+                <td><%= user.email %></td>
+                <td><%= user.created_at %></td>
 
-                <td width="280">
+                <% if user.status == true%>
+                <td> <img src="/assets/active.png" title="Inactive" /><%#= user.status %></td>
+                <% else %>
+                <td> <img src="/assets/deactive.png" title="Inactive" /><%#= user.status %></td>
+                <% end %>
+
+
+
+                <td><%= user.roles.collect {|n| n.name }.join(',') unless user.roles.blank? %></td>
+
+                <td>
                 <%#= link_to 'Show' , :class=>"btn btn-primary pull-left"%>
                 <%= link_to 'Edit',edit_admin_user_path(user),:method => :get , :class=>"btn btn-block btn-inverse"%>
                 <%#if category.status==true%>
@@ -74,5 +82,3 @@
                  <%#= will_paginate @user,:container => true %>
             </div>
     </div>
-
-</div>

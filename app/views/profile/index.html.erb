@@ -5,7 +5,13 @@
 		<div id="content">
 		    <div class="container-960 innerT">
 		    <div class="table-responsive">
-		    <%= link_to 'Edit profile', edit_user_registration_path(current_user),:method => :get , :class=>"btn btn-primary pull-right"%>
+		    <i class="icon-search icon-white"></i>
+		    <%#= link_to 'Edit profile', edit_user_registration_path(current_user),:method => :get , :class=>"btn btn-primary pull-right"%>
+          <%= link_to(edit_user_registration_path(current_user),:class => 'btn btn-primary pull-right' ) do %>
+                <i class="icon-edit icon-white"></i> Edit
+              <% end %>
+
+
 				<table class="table-striped table-bordered">
 					The user profile  
 				<% if current_user %>
