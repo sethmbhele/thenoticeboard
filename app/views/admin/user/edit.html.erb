@@ -59,10 +59,10 @@
               <div class="innerR">
               <label class="strong">Username</label>
                 
-                 <%= f.text_field :username, :autofocus => true, :class=>"input-block-level", :placeholder=>"Your Username"  %>
+                 <%= f.text_field :username, :autofocus => true,:size=> "30", :placeholder=>"Your Username"  %>
                 <label class="strong">Email</label>
                 
-                 <%= f.email_field :email, :autofocus => true, :class=>"input-block-level", :placeholder=>"Your Email"  %>
+                 <%= f.email_field :email, :autofocus => true, :size=> "30", :placeholder=>"Your Email"  %>
                  <label class="strong">User Status</label>
 
                  <%= f.select :status,options_for_select([["Active", "true"], ["Inactive", "false"]]),{:include_blank => "Select "}  %>

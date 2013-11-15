@@ -2,6 +2,9 @@ Thenoticeboard::Application.routes.draw do
   
 
 
+  resources :posts
+
+
   get "user/index"
 
   root :to =>'home#index'
@@ -14,6 +17,9 @@ Thenoticeboard::Application.routes.draw do
   match 'shop' => 'home#shop'
   match 'index_slider' => 'home#index_slider'
   match 'profile' => "profile#index"
+  
+  match 'posts' => 'home#new'
+
   #admin routes
   namespace :admin do
 

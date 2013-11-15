@@ -1,0 +1,117 @@
+
+<script>
+  
+  $(document).ready (function() {
+
+      
+    $("#new_post").validate({
+      onclick: false,
+      rules:
+        {
+        "post[name]":{required: true},
+         "post[company_name]":{required: true},
+         "post[company_type]":{required: true},
+         "post[company_reg_no]":{required: true},
+         "post[company_address]":{required: true},
+         "post[company_description]":{required: true},
+         "post[country_id]":{required: true},
+         "post[state_id]":{required: true},
+         "post[city]":{required: true},
+         "post[zip]":{required: true},
+         "post[phone]":{required: true},
+         "post[url]":{required: true},
+         "post[email]":{required: true,
+          email:true}
+       
+      },
+      messages: {
+
+         "post[name]":{required: 'Please enter name'},
+         "post[company_name]":{required: 'Please enter company name'},
+         "post[company_type]":{required: 'Please enter company type'},
+         "post[company_reg_no]":{required: 'Please enter company register no'},
+         "post[company_address]":{required: 'Please enter company address'},
+         "post[company_description]":{required: 'Please enter description'},
+         "post[country]":{required: 'Please select country'},
+         "post[state]":{required: 'Please select state'},
+         "post[city]":{required: 'Please enter city'},
+         "post[zip]":{required: 'Please enter zip'},
+         "post[phone]":{required: 'Please enter phone'},
+         "post[url]":{required: 'Please enter url'},
+         "post[email]":{required: 'Please enter email'}
+        
+         
+      }
+
+    });
+  });
+</script>
+
+
+ <%= form_for(@post) do |f| %>
+  <!--
+  <%# if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%#= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <%# @post.errors.full_messages.each do |msg| %>
+        <li><%#= msg %></li>
+      <%# end %>
+      </ul>
+    </div>
+  <%# end %>
+-->
+ <div class="row-fluid row-merge">
+                   
+            <div class="span6">
+              <div class="innerR">
+                  
+                    <label class="strong">Name </label><%= f.text_field :name %>
+                    
+                  
+                     <label class="strong">Company Name  </label>  <%= f.text_field :company_name %>
+                   
+                 
+                  
+                    <label class="strong">Company Type  </label><%= f.text_field :company_type %>  
+                    
+        
+                    <label class="strong">Company Register No.  </label>  <%= f.number_field :company_reg_no %> 
+                    
+                
+                     <label class="strong">Company Address  </label><%= f.text_field :company_address,:class => 'text_field' %>
+                    
+                
+                    <label class="strong">Company Description   </label><%= f.text_area :company_description, :size => '2x2' %> 
+                   
+                 
+                    <label class="strong">Country  </label> <%#= f.number_field :country_id %> 
+                     <%= f.collection_select :country_id, Country.order(:name), :id, :name, include_blank: 'Select Country' %>
+              
+                    <label class="strong">State </label> <%#= f.number_field :state_id %>
+                    <%= f.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: 'Select state' %>
+                 
+                    <label class="strong">City </label> <%= f.text_field :city %> 
+                    
+               
+                    <label class="strong">ZIP  </label><%= f.text_field :zip %>
+                    
+               
+                    <label class="strong">Phone  </label><%= f.text_field :phone %> 
+                    
+                 
+                    <label class="strong">Email  </label><%= f.text_field :email %>
+                   
+                 
+                    <label class="strong">URL  </label><%= f.text_field :url %>
+                    
+              <label class="strong"></label>
+                  <div class="span4 center">
+                    <%= f.submit 'Create Post', :class => 'btn btn-primary' %>
+
+                  </div>
+                <% end %>
+                </div>
+                </div>
+                </div>
