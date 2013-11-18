@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  # GET /posts
-  # GET /posts.json
+  # Method for post listing all posts
+  
   def index
     @posts = Post.all
 
@@ -10,8 +10,15 @@ class PostsController < ApplicationController
     end
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
+ # Method for search 
+ def search 
+ 
+ 
+ end 
+
+  
+  # Methods for listing indivisual post
+  #----------------------------------------------------------------------
   def show
     @post = Post.find(params[:id])
 
@@ -21,8 +28,9 @@ class PostsController < ApplicationController
     end
   end
 
-  # GET /posts/new
-  # GET /posts/new.json
+  
+  # Method for new post
+  #----------------------------------------------------------------------------
   def new
     @post = Post.new
 
@@ -32,13 +40,15 @@ class PostsController < ApplicationController
     end
   end
 
-  # GET /posts/1/edit
+  # Method for Edit post 
+  #----------------------------------------------------------------------------
+
   def edit
     @post = Post.find(params[:id])
   end
 
-  # POST /posts
-  # POST /posts.json
+  # Method for creating new posts
+  # --------------------------------------------------------------------------------
   def create
     @post = Post.new(params[:post])
 
@@ -53,8 +63,8 @@ class PostsController < ApplicationController
     end
   end
 
-  # PUT /posts/1
-  # PUT /posts/1.json
+  # Methods for creating update 
+  # --------------------------------------------------------------------------------
   def update
     @post = Post.find(params[:id])
 
@@ -69,8 +79,9 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
+  # Method for delete the posts
+  # --------------------------------------------------------------------------------
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy

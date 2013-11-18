@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
  #   layout "front"	
+ #   static sits 
+
   def index
 
   end

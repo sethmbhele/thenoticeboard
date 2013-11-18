@@ -22,4 +22,5 @@
 //= require admin/jquery.ui.touch-punch.min
 //= require admin/bootstrap.min
 //= require jquery.validate
+//= require posts
 //= require_tree .
