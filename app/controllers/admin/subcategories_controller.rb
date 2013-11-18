@@ -1,13 +1,9 @@
 class Admin::SubcategoriesController < Admin::BaseController
-before_filter :check_option
-
- def check_option
-    @option='3'
-  end
-
+ 
   
-  # GET /subcategories
-  # GET /subcategories.json
+  # Method for listing subcategory
+  # --------------------------------------------------------------------- 
+ 
   def index
 
     # if(params[:search])    
@@ -41,8 +37,9 @@ before_filter :check_option
     end
   end
 
-  # GET /subcategories/1
-  # GET /subcategories/1.json
+ # Method for show subcategory
+ # --------------------------------------------------------------------- 
+ 
   def show
     @subcategory = Subcategory.find(params[:id])
 
@@ -52,8 +49,9 @@ before_filter :check_option
     end
   end
 
-  # GET /subcategories/new
-  # GET /subcategories/new.json
+  # Method for initializing subcategory object
+  # --------------------------------------------------------------------- 
+ 
   def new
     @subcategory = Subcategory.new
     @category = Category.order('name asc')
@@ -63,15 +61,18 @@ before_filter :check_option
     end
   end
 
-  # GET /subcategories/1/edit
+  # Method for edit subcategory
+  # --------------------------------------------------------------------- 
+ 
   def edit
  
     @subcategory = Subcategory.find(params[:id])
      @category = Category.order('name asc')
   end
 
-  # POST /subcategories
-  # POST /subcategories.json
+  # Method for create subcategory
+  # --------------------------------------------------------------------- 
+ 
   def create
     @subcategory = Subcategory.new(params[:subcategory])
      @category = Category.order('name asc')
@@ -86,8 +87,9 @@ before_filter :check_option
     end
   end
 
-  # PUT /subcategories/1
-  # PUT /subcategories/1.json
+  # Method for update subcategory
+  # --------------------------------------------------------------------- 
+ 
   def update
     @subcategory = Subcategory.find(params[:id])
      @category = Category.order('name asc')
@@ -102,8 +104,10 @@ before_filter :check_option
     end
   end
 
-  # DELETE /subcategories/1
-  # DELETE /subcategories/1.json
+  
+  # Method for delete subcategory
+  # --------------------------------------------------------------------- 
+ 
   def destroy
     @subcategory = Subcategory.find(params[:id])
     @subcategory.destroy
@@ -114,6 +118,9 @@ before_filter :check_option
     end
   end
 
+  # Method for cahange status
+  # --------------------------------------------------------------------- 
+ 
   def change_status
     @subcategory = Subcategory.find(params[:id])
     
@@ -125,7 +132,6 @@ before_filter :check_option
     end 
      
         format.html { redirect_to admin_subcategories_url, notice:'Subcategory was successfully updated.' }        
-   
     end
   end
 

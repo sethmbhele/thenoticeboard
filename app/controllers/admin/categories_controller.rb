@@ -1,12 +1,9 @@
 class Admin::CategoriesController < Admin::BaseController
-  # GET /categories
-  # GET /categories.json
- before_filter :check_option
+  
 
- def check_option
-    @option='2'
-  end
-
+# Method for listing categories
+# --------------------------------------------------------------------- 
+ 
   def index
 
     # if(params[:search])    
@@ -38,8 +35,9 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
-  # GET /categories/1
-  # GET /categories/1.json
+  # Method for listing single category
+  # --------------------------------------------------------------------- 
+ 
   def show
     @category = Category.find(params[:id])
 
@@ -49,8 +47,9 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
-  # GET /categories/new
-  # GET /categories/new.json
+  # Method for post new intilizing category object
+  # --------------------------------------------------------------------- 
+ 
   def new
     @category = Category.new
 
@@ -60,14 +59,17 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
-  # GET /categories/1/edit
+  # Method for edit action 
+  # --------------------------------------------------------------------- 
+ 
   def edit
     @category = Category.find(params[:id])
 
   end
 
-  # POST /categories
-  # POST /categories.json
+  # Method for create category
+  # --------------------------------------------------------------------- 
+ 
   def create
     @category = Category.new(params[:category])
 
@@ -82,8 +84,10 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
-  # PUT /categories/1
-  # PUT /categories/1.json
+ 
+ # Method for update category
+ # --------------------------------------------------------------------- 
+ 
   def update
     @category = Category.find(params[:id])
 
@@ -98,8 +102,10 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
-  # DELETE /categories/1
-  # DELETE /categories/1.json
+
+# Method for delete category
+# --------------------------------------------------------------------- 
+ 
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
@@ -110,6 +116,10 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
+
+# Method for category change 
+# --------------------------------------------------------------------- 
+ 
    def change_status
     @category = Category.find(params[:id])
     
@@ -124,4 +134,6 @@ class Admin::CategoriesController < Admin::BaseController
    
     end
   end
+
+
 end

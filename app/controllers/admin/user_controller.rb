@@ -1,15 +1,23 @@
 class Admin::UserController < Admin::BaseController
   
   # User listing
+  # --------------------------------------------------------------------- 
+ 
   def index
   	@user = User.order('created_at DESC')
   end
 
-  # User new action 
+  # User new action
+  # --------------------------------------------------------------------- 
+  
 	def new
 	    @user = User.new   
 	end
 
+
+# Method for create user 
+# --------------------------------------------------------------------- 
+ 
 	def create
 	    @header="Add User"
 	    @user = User.new(params[:user])
@@ -26,7 +34,9 @@ class Admin::UserController < Admin::BaseController
 	    end
 	end
 
-# User Edit method
+# User Edit method and dispaying role for a user 
+# --------------------------------------------------------------------- 
+
   def edit
       @user = User.find(params[:id])
       @role = @user.roles
@@ -34,21 +44,26 @@ class Admin::UserController < Admin::BaseController
       @role_except = Role.find(:all, :conditions=> ['id not in (?)', @role.pluck(:id) ]) 
   end
  
- # User update method 
+
+ # User update method
+ # --------------------------------------------------------------------- 
+  
  def update
     @user = User.find(params[:id])
 
   	@user.update_attributes(params[:user])
   
      #Deactivate user roles
-  	 if params[:deactive_role_ids]
+  	 #---------------------------------------
+     if params[:deactive_role_ids]
   	 	params[:deactive_role_ids].each do |t|
          @user.remove_role  :"#{t}" 
         end 
      end
     
     #activate user role
-
+    #----------------------------------------
+ 
      if params[:active_role_ids]
   	 	params[:active_role_ids].each do |t|
          @user.add_role  :"#{t}" 
@@ -65,6 +80,8 @@ end
 
 
 # User delete method
+# --------------------------------------------------------------------- 
+
   def destroy
     @user = User.find(params[:id])
     @user.destroy

@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
-  # Method for post listing all posts
   
+  # Method for post listing all posts
+  # --------------------------------------------------------------------- 
+ 
   def index
     @posts = Post.all
 
