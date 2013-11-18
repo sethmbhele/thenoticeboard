@@ -7,12 +7,12 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'jquery-rails', '2.0.2'
-gem 'devise'
+gem 'devise', '3.1.1'
 gem 'thin','~> 1.5.0'
-gem "therubyracer"
-gem "less-rails"
-gem "heroku"
-gem 'meta_search'
+gem "therubyracer", '0.12.0'
+gem "less-rails", '2.4.2'
+gem "heroku", '3.0.1'
+gem 'meta_search', '1.1.3'
 gem "auto_strip_attributes", "~> 1.0"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"

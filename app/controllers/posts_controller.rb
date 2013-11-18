@@ -12,13 +12,16 @@ class PostsController < ApplicationController
     end
   end
 
+ #-----------------------------------------------------------------------
  # Method for search 
+ #-----------------------------------------------------------------------
  def search 
- 
- 
+  if params[:name] 
+   @posts =  Post.joins(:subcategory).where(:zip => params[:zip]).where('subcategories.name ilike?', params[:name])
+  end
  end 
 
-  
+  #----------------------------------------------------------------------
   # Methods for listing indivisual post
   #----------------------------------------------------------------------
   def show
@@ -29,8 +32,8 @@ class PostsController < ApplicationController
       format.json { render json: @post }
     end
   end
-
-  
+ 
+  #----------------------------------------------------------------------------
   # Method for new post
   #----------------------------------------------------------------------------
   def new
@@ -42,6 +45,7 @@ class PostsController < ApplicationController
     end
   end
 
+  #----------------------------------------------------------------------------
   # Method for Edit post 
   #----------------------------------------------------------------------------
 
@@ -49,6 +53,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  #--------------------------------------------------------------------------------
   # Method for creating new posts
   # --------------------------------------------------------------------------------
   def create
@@ -65,6 +70,7 @@ class PostsController < ApplicationController
     end
   end
 
+  # --------------------------------------------------------------------------------
   # Methods for creating update 
   # --------------------------------------------------------------------------------
   def update
@@ -81,6 +87,7 @@ class PostsController < ApplicationController
     end
   end
 
+  # --------------------------------------------------------------------------------
   # Method for delete the posts
   # --------------------------------------------------------------------------------
 

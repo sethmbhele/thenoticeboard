@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :authenticate_user!
+ # before_filter :authenticate_user!
 
 # Exception Method of cancan
 # --------------------------------------------------------------------- 
@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, :alert => exception.message
   end
 
+
+private
 # Custom devise update Method for user
 # ---------------------------------------------------------------------  
     def after_update_path_for(resource)
@@ -15,7 +17,7 @@ class ApplicationController < ActionController::Base
     end
   
 
-private
+
 
 # Exception Method of cancan
 # --------------------------------------------------------------------- 

@@ -2,11 +2,8 @@ Thenoticeboard::Application.routes.draw do
   
 
 
-  resources :posts
 
-
-  get "user/index"
-
+ 
   root :to =>'home#index'
  
   match 'home' => 'home#home'
@@ -19,6 +16,7 @@ Thenoticeboard::Application.routes.draw do
   match 'profile' => "profile#index"
   
   match 'posts' => 'home#new'
+  match 'search' => 'posts#search'
 
   #admin routes
   namespace :admin do
@@ -55,7 +53,7 @@ Thenoticeboard::Application.routes.draw do
    
  end
 
-
+ resources :posts
 
 
   # The priority is based upon order of creation:
