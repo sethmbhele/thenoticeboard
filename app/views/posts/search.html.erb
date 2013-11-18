@@ -10,24 +10,30 @@
 					
 				  <div class="widget-body">
 					<div class="page-header">
-                            <h2> Search Posts</h2> <%= link_to 'Back', posts_path, :class=>"btn btn-primary pull-right" %>
-                          </div>
+                            <h2> Search Posts</h2> <%#= link_to 'Back', posts_path, :class=>"btn btn-primary pull-right" %>
+                      
                              
                         
                           <div style="margin:0 auto 20px auto;text-align:center; color:green">
                                     <p id="notice"><%= notice %></p>
                           </div>
-                          <%#=form_tag url_for(:action => :search),:id => 'search', :html => {:method => :get}  do %>
+                          
                            <%= form_for search_path, :html => {:method => :get} do |f| %> 
-							
-							  <p>
-							    <%= text_field_tag :name, params[:name] %>
-							    <%= text_field_tag :zip, params[:zip] %>
-							    <%= f.submit "Search", :class=>"btn btn-primary", :name => nil %>
-							  </p>
+					             
+					                    <div>What service you need?</div> 
+					                    <div>
+					                    <%= text_field_tag :name  , params[:name] ,:style => "width:185px;height:16px;", :class =>"input-block-level", :placeholder => "Pumbler"%>
+					                    <div>Where do you need?</div> 
+					                     <%= text_field_tag :zip  , params[:zip] ,:style => "width:185px;height:16px;", :class =>"input-block-level", :placeholder => "ZIP code"%>
+					                    <div></div> 
+					                    <%= f.submit "Search", :class=>"btn btn-primary pull-left" %>
+					                    
+					                    </div>
+					           
+									
 							<% end %>
-
-        <% unless @posts.blank? %>
+						     </div>
+                        <% unless @posts.blank? %>
 							 <table class="table-responsive table table-bordered table-striped"  >
                                   <tr>
                                     <th>Name</th>
@@ -52,7 +58,7 @@
                                   </tr>
                                 <% end %>
                         </table>
-           <% end %>
+                    <% end %>
 						
 				  </div>
 			   </div>

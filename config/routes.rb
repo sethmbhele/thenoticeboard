@@ -2,7 +2,7 @@ Thenoticeboard::Application.routes.draw do
   
 
 
-
+  resources :posts
  
   root :to =>'home#index'
  
@@ -53,7 +53,7 @@ Thenoticeboard::Application.routes.draw do
    
  end
 
- resources :posts
+
 
 
   # The priority is based upon order of creation:
