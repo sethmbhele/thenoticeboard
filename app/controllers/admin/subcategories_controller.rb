@@ -1,6 +1,6 @@
 class Admin::SubcategoriesController < Admin::BaseController
  
-  
+  #----------------------------------------------------------------------
   # Method for listing subcategory
   # --------------------------------------------------------------------- 
  
@@ -37,8 +37,9 @@ class Admin::SubcategoriesController < Admin::BaseController
     end
   end
 
+ #--------------------------------------------------------------------------
  # Method for show subcategory
- # --------------------------------------------------------------------- 
+ # ------------------------------------------------------------------------- 
  
   def show
     @subcategory = Subcategory.find(params[:id])
@@ -49,18 +50,22 @@ class Admin::SubcategoriesController < Admin::BaseController
     end
   end
 
+  #---------------------------------------------------------------------------
   # Method for initializing subcategory object
   # --------------------------------------------------------------------- 
  
   def new
     @subcategory = Subcategory.new
-    @category = Category.order('name asc')
+    @category    = Category.order('name asc')
+    @questions   = Question.new
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @subcategory }
     end
   end
 
+  #----------------------------------------------------------------------
   # Method for edit subcategory
   # --------------------------------------------------------------------- 
  
@@ -70,6 +75,7 @@ class Admin::SubcategoriesController < Admin::BaseController
      @category = Category.order('name asc')
   end
 
+  #-----------------------------------------------------------------------
   # Method for create subcategory
   # --------------------------------------------------------------------- 
  
@@ -87,6 +93,7 @@ class Admin::SubcategoriesController < Admin::BaseController
     end
   end
 
+  #-----------------------------------------------------------------------
   # Method for update subcategory
   # --------------------------------------------------------------------- 
  
@@ -104,9 +111,9 @@ class Admin::SubcategoriesController < Admin::BaseController
     end
   end
 
-  
+  #--------------------------------------------------------------------------
   # Method for delete subcategory
-  # --------------------------------------------------------------------- 
+  # ------------------------------------------------------------------------- 
  
   def destroy
     @subcategory = Subcategory.find(params[:id])
@@ -118,8 +125,9 @@ class Admin::SubcategoriesController < Admin::BaseController
     end
   end
 
+  #--------------------------------------------------------------------------
   # Method for cahange status
-  # --------------------------------------------------------------------- 
+  # ------------------------------------------------------------------------- 
  
   def change_status
     @subcategory = Subcategory.find(params[:id])

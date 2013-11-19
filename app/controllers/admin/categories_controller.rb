@@ -1,6 +1,6 @@
 class Admin::CategoriesController < Admin::BaseController
   
-
+#--------------------------------------------------------------------- 
 # Method for listing categories
 # --------------------------------------------------------------------- 
  
@@ -34,7 +34,8 @@ class Admin::CategoriesController < Admin::BaseController
       format.json { render json: @categories }
     end
   end
-
+  
+  #----------------------------------------------------------------------
   # Method for listing single category
   # --------------------------------------------------------------------- 
  
@@ -47,6 +48,7 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
+  #----------------------------------------------------------------------
   # Method for post new intilizing category object
   # --------------------------------------------------------------------- 
  
@@ -59,6 +61,7 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
+  #----------------------------------------------------------------------
   # Method for edit action 
   # --------------------------------------------------------------------- 
  
@@ -66,7 +69,8 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.find(params[:id])
 
   end
-
+  
+  #----------------------------------------------------------------------
   # Method for create category
   # --------------------------------------------------------------------- 
  
@@ -84,7 +88,7 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
- 
+ #-----------------------------------------------------------------------
  # Method for update category
  # --------------------------------------------------------------------- 
  
@@ -102,7 +106,7 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
-
+#----------------------------------------------------------------------
 # Method for delete category
 # --------------------------------------------------------------------- 
  
@@ -116,9 +120,9 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
-
+#---------------------------------------------------------------------------
 # Method for category change 
-# --------------------------------------------------------------------- 
+# -------------------------------------------------------------------------- 
  
    def change_status
     @category = Category.find(params[:id])
