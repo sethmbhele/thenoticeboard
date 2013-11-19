@@ -1,0 +1,65 @@
+<%- model_class = Question -%>
+<div class="mid_contain">
+        
+  <div style="width:100%;float:left">
+          
+                  <div class="page-header">
+                    <h2><div class="comman_heading">Add Question</div><h2>
+                  </div>
+         
+          <%= form_for([:admin, @question],:html =>{:id => "form",:multipart => true}) do |f| %>
+                    <table class="table table-bordered" >
+                    
+                      <% if @question.errors.any? %>
+                          <tr>
+                          <td height="30" align="center" valign="middle" bgcolor="#FFFFFF"  colspan="2" id="notice">
+                          <% @question.errors.full_messages.each do |msg| %>
+                            <div style="color:red"><%= msg %></div>
+                          <% end %>
+                          </td>
+                          </tr>                       
+                      <% end %>
+                     <tr>
+                        <td height="30" align="right" valign="top" bgcolor="#FFFFFF">
+                         <strong> Question</strong><span style="color:red">*</span>
+                        </td>
+                        <td align="left" valign="top" bgcolor="#FFFFFF">
+                             <%= f.text_field :name,:class =>"input-block-level",:maxlength =>60,:size=>20 %>
+
+                        </td>
+                      </tr>
+                                                 
+                      <tr>  
+                      <td height="30" align="right" valign="top" bgcolor="#FFFFFF" width="200">
+                        <strong>Subcategory</strong><span style="color:red">*</span>
+                      </td>
+                      <td align="left" valign="top" bgcolor="#FFFFFF">
+                         
+
+                         <%= f.collection_select :subcategory_id, @subcategory, :id, :name, :prompt => "Select"  %> 
+                      </td>
+                    </tr>
+
+
+                     <tr>
+                      <td> <strong>Subquestions</strong>        <%= f.fields_for :subquestions do |ff| %>
+
+                             <%= render 'subquestion_fields', f: ff %></td>
+                                <% end %>
+                        <td><%= link_to_add_fields "Add subquestions ", f, :subquestions %></td>
+                      </tr> 
+
+
+                       <tr>  
+                        <td height="30" align="left" valign="top" bgcolor="#FFFFFF" width="200" ></td>
+                           <td align="left" valign="top" bgcolor="#FFFFFF">
+                           <%= f.submit "Save", :class=>"btn btn-primary pull-left" %>
+                           <input type="button" value="Back" style="margin-left:5px" class="btn btn-primary pull-left" onClick="location.href='/admin/subcategories'" >
+                          
+                        </td>
+                       </tr>                  
+                    </table>
+          <% end %>
+
+  </div>        
+</div>

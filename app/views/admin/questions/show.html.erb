@@ -1,0 +1,38 @@
+<%- model_class = Question -%>
+<div class="mid_contain">
+        
+  <div style="width:100%;float:left">
+          
+                  <div class="page-header">
+                    <h2><div class="comman_heading">Question</div><h2>
+                  </div>
+         
+       
+                    <table class="table table-bordered" >
+                          <tr>
+                            <td height="30" align="right" valign="top" bgcolor="#FFFFFF">
+                             <strong> Question</strong>
+                            </td>
+                            <td align="left" valign="top" bgcolor="#FFFFFF">
+                                 <%= @question.name %>
+                                   <% unless @question.blank? %>
+                                   <% @question.subquestions.each do |q| %>
+                                   <ul>
+                                   <li>
+                                   <%= q.name %>
+                                   </li>
+                                   </ul>
+                                   <%end%>
+                                   <%end%>
+                            </td>
+                          </tr>
+                                             
+                    </table>
+        <%= link_to 'Back', admin_questions_path ,:class=>"btn btn-primary pull-left"%>
+
+  </div>        
+</div>
+
+
+            
+        

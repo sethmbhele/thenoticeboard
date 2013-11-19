@@ -57,8 +57,7 @@ class Admin::SubcategoriesController < Admin::BaseController
   def new
     @subcategory = Subcategory.new
     @category    = Category.order('name asc')
-    @questions   = Question.new
-
+   
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @subcategory }

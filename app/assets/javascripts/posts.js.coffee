@@ -34,3 +34,8 @@ jQuery ->
     else
       $('#post_subcategory_id').empty()
       $('#subcategory').hide()
+
+
+
+
+  

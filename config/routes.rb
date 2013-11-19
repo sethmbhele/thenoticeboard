@@ -23,6 +23,7 @@ Thenoticeboard::Application.routes.draw do
 
   root :to =>'dashboard#index'
   resources :user
+  resources :questions
   resources :categories do
     member do
         get "change_status"        

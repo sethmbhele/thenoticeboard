@@ -1,0 +1,74 @@
+
+<%- model_class = Question -%>
+<div class="mid_contain">
+                  
+<div style="width:100%;float:left">
+                                 
+           <div class="page-header">
+              <h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2>
+            </div>
+
+                    <div style="margin:0 auto 20px auto;text-align:center; color:green">
+                              <p id="notice"><%= notice %></p>
+                    </div>
+           
+                            
+                                <div><%= link_to 'New question',  new_admin_question_path,:class=>"btn btn-primary pull-right" %>
+                                </div>
+                                 
+           
+                      
+                          <table class="table table-bordered table-striped"  >
+                            <thead>
+                              <tr>               
+                                <th><%= model_class.human_attribute_name(:question) %></th>                 
+                                <th><%= model_class.human_attribute_name(:subcategory_id) %></th>
+                                <th><%=t '.actions', :default => t("helpers.actions") %></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              
+                              <% @questions.each_with_index do |question,i| %>
+                              
+                                <tr>
+
+
+                              <td height="30" align="left" valign="middle" ><%= question.name %></td>
+
+                              <td height="30" align="left" valign="middle" ><%= question.subcategory.name unless question.subcategory.nil? %></td>
+                               <!-- <td><%#= category.desc %></td> -->
+                              <td width="280">
+                              <%= link_to 'Show', admin_question_path(question) , :class=>"btn btn-primary pull-left"%>
+                              <%= link_to 'Edit', edit_admin_question_path(question), :class=>"btn btn-primary pull-left"%>
+                        
+                              
+                              <%= link_to 'Destroy', admin_question_path(question),:class=>"btn btn-primary pull-left", method: :delete, data: { confirm: 'Are you sure want to delete the question?' } %>
+                              </td>
+                              </tr>
+
+
+                          <% end %> 
+                           
+                                <% if @questions.empty? %>
+                                <tr>
+                                   <td height="30" align="left" valign="middle" bgcolor="#f4f4f4" colspan="3">
+                                      No Records Found
+                                   </td> 
+                                 </tr> 
+                                <% end %>
+                            
+                            </tbody>
+                          </table>
+  
+              <div class="digg_pagination" width="100%" style="float:right">    
+                 <%= will_paginate @questions,:container => true %>
+              </div>
+            
+    </div>
+
+</div>
+
+
+
+
+
