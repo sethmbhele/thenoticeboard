@@ -47,6 +47,18 @@
                          <%= f.grouped_collection_select :subcategory_id, Category.order(:name), :subcategories, :name, :id, :name, include_blank: 'Select Subcategory' %>
                         </div>
 
+                        
+
+                        <div id="questions_master">
+                        <label class="strong">Questions</label> 
+                         <%= f.grouped_collection_select :question_id, Subcategory.order(:name), :questions, :name, :id, :name, include_blank: 'Select Questions' %>
+                        </div>
+
+                        <div id="sub_questions">
+                        <label class="strong">Subquestions</label> 
+                         <%= f.grouped_collection_select :subquestion_id, Question.order(:name), :subquestions, :name, :id, :name, include_blank: 'Select Subquestions' %>
+                        </div>
+
                      
                         <label class="strong">Country  </label> 
                          <%= f.collection_select :country_id, Country.order(:name), :id, :name, include_blank: 'Select Country' %>

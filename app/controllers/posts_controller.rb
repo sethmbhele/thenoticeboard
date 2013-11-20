@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # --------------------------------------------------------------------- 
  
   def index
-    @posts = Post.all
+    @posts = Post.order('created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -63,7 +63,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
-        format.json { render json: @post, status: :created, location: @post }
+        format.json { render json: posts_path, status: :created, location: posts_path }
       else
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }

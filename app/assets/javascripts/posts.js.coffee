@@ -4,6 +4,8 @@
 
 # function for dynamic select after selection for country state drop down should  sort according to that country
 
+
+
 jQuery ->
   
   states = $('#post_state_id').html()
@@ -36,6 +38,28 @@ jQuery ->
       $('#subcategory').hide()
 
 
+  $('#questions_master').hide()
+  questions = $('#post_question_id').html()
+  $('#post_subcategory_id').change ->
+    subcategory = $('#post_subcategory_id :selected').text()   
+    options = $(questions).filter("optgroup[label='#{subcategory}']").html()
+    if options
+      $('#post_question_id').html(options)
+      $('#questions_master').show()
+    else
+      $('#post_question_id').empty()
+      $('#questions_master').hide()
 
 
-  
+
+  $('#sub_questions').hide()
+  subquestions = $('#post_subsubquestion_id').html()
+  $('#post_question_id').change ->
+    question = $('#post_question_id :selected').text()   
+    options = $(subquestions).filter("optgroup[label='#{question}']").html()
+    if options
+      $('#post_subquestion_id').html(options)
+      $('#sub_questions').show()
+    else
+      $('#post_subquestion_id').empty()
+      $('#sub_questions').hide()

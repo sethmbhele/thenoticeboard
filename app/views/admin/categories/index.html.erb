@@ -47,15 +47,15 @@
                 <td height="30" align="left" valign="middle" ><%= category.name %></td>
                  <!-- <td><%#= category.desc %></td> -->
                 <td width="280">
-                <%= link_to 'Show', admin_category_path(category) , :class=>"btn btn-primary pull-left"%>
-                <%= link_to 'Edit', edit_admin_category_path(category), :class=>"btn btn-primary pull-left"%>
+                <%= link_to 'Show', admin_category_path(category) , :class=>"btn btn-inverse pull-left"%>
+                <%= link_to 'Edit', edit_admin_category_path(category), :class=>"btn btn-btn pull-left"%>
                 <%if category.status==true%>
-               <%= link_to 'Active', change_status_admin_category_path(category), :class=>"btn btn-primary pull-left" ,:confirm => 'Do you want  to inactivate category?' %>
+               <%= link_to 'Active', change_status_admin_category_path(category), :class=>"btn btn-success pull-left" ,:confirm => 'Do you want  to inactivate category?' %>
                 <%else%>
-                <%= link_to 'Inactive', change_status_admin_category_path(category), :class=>"btn btn-primary pull-left",:confirm => 'Do you want to activate category?' %> 
+                <%= link_to 'Inactive', change_status_admin_category_path(category), :class=>"btn btn-btn pull-left",:confirm => 'Do you want to activate category?' %> 
                 <%end%>
                 
-                <%= link_to 'Destroy', admin_category_path(category),:class=>"btn btn-primary pull-left", method: :delete, data: { confirm: 'Are you sure want to delete the category?' } %>
+                <%= link_to 'Destroy', admin_category_path(category),:class=>"btn btn-danger pull-left", method: :delete, data: { confirm: 'Are you sure want to delete the category?' } %>
                 </td>
                 </tr>
             <% end %> 

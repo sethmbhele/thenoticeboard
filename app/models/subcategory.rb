@@ -5,4 +5,5 @@ class Subcategory < ActiveRecord::Base
   validates :category_id, presence: true
   auto_strip_attributes :name
   belongs_to :category
+  has_many :questions
 end

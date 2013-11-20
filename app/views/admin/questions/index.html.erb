@@ -38,11 +38,11 @@
                               <td height="30" align="left" valign="middle" ><%= question.subcategory.name unless question.subcategory.nil? %></td>
                                <!-- <td><%#= category.desc %></td> -->
                               <td width="280">
-                              <%= link_to 'Show', admin_question_path(question) , :class=>"btn btn-primary pull-left"%>
-                              <%= link_to 'Edit', edit_admin_question_path(question), :class=>"btn btn-primary pull-left"%>
+                              <%= link_to 'Show', admin_question_path(question) , :class=>"btn btn-inverse pull-left"%>
+                              <%= link_to 'Edit', edit_admin_question_path(question), :class=>"btn btn-btn pull-left"%>
                         
                               
-                              <%= link_to 'Destroy', admin_question_path(question),:class=>"btn btn-primary pull-left", method: :delete, data: { confirm: 'Are you sure want to delete the question?' } %>
+                              <%= link_to 'Destroy', admin_question_path(question),:class=>"btn btn-danger pull-left", method: :delete, data: { confirm: 'Are you sure want to delete the question?' } %>
                               </td>
                               </tr>
 

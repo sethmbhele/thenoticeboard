@@ -1,0 +1,24 @@
+<%= form_for([:admin, @questions],:html =>{:id => "new_category_form",:multipart => true}) do |f| %>
+                    <table class="table table-bordered" >
+                    
+                      <% if @questions.errors.any? %>
+                          <tr>
+                          <td height="30" align="center" valign="middle" bgcolor="#FFFFFF"  colspan="2" id="notice">
+                          <% @questions.errors.full_messages.each do |msg| %>
+                            <div style="color:red"><%= msg %></div>
+                          <% end %>
+                          </td>
+                          </tr>                       
+                      <% end %>
+                     <tr>
+                        <td height="30" align="right" valign="top" bgcolor="#FFFFFF">
+                         <strong> Name</strong><span style="color:red">*</span>
+                        </td>
+                        <td align="left" valign="top" bgcolor="#FFFFFF">
+                             <%= f.text_field :name,:class =>"input-block-level",:maxlength =>60,:size=>20 %>
+
+                        </td>
+                      </tr>
+                                                              
+                    </table>
+          <% end %>

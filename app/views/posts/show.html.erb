@@ -7,15 +7,15 @@
           <div class="widget widget-heading-simple widget-body-gray">
         
           <div class="widget-body">
-            <div class="page-header">
-                            <h2>Posts details</h2>
-                          </div>
+          <div class="page-header">
+                            <h2>Post details </h2>
+                          
+                            <%= link_to 'Back', posts_path, :class=>"btn btn-inverse pull-right" %>
+                           </div>
 
-            <%#= render 'form' %>
+         
 
-           
-
-<p id="notice"><%= notice %></p>
+<p id="notice"style="color:green"><%= notice %></p>
 
 <p>
   <b>Name:</b>
@@ -48,14 +48,36 @@
 </p>
 
 <p>
+  <b>Category:</b>
+  <%= @post.category.name unless @post.category.blank? %>
+</p>
+
+<p>
+  <b>Subcategory:</b>
+  <%= @post.subcategory.name unless @post.subcategory.blank? %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @post.question.name unless @post.question.blank? %>
+</p>
+
+<p>
+  <b>Subquestion:</b>
+  <%= @post.subquestion.name unless @post.subquestion.blank? %>
+</p>
+
+<p>
   <b>Country:</b>
-  <%= @post.country_id %>
+  <%= @post.country.name unless @post.country.blank? %>
 </p>
 
 <p>
   <b>State:</b>
-  <%= @post.state_id %>
+  <%= @post.state.name unless @post.state.blank? %>
 </p>
+
+
 
 <p>
   <b>City:</b>
@@ -85,7 +107,7 @@
 
 <%#= link_to 'Edit', edit_post_path(@post) %> 
 <%#= link_to 'Back', posts_path %>
- <%= link_to 'Back', posts_path %>
+ <%#= link_to 'Back', posts_path %>
           </div>
          </div>
       

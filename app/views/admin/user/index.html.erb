@@ -48,14 +48,14 @@
 
                   <td>
                   <%#= link_to 'Show' , :class=>"btn btn-primary pull-left"%>
-                  <%= link_to 'Edit',edit_admin_user_path(user),:method => :get , :class=>"btn btn-block btn-inverse"%>
+                  <%= link_to 'Edit',edit_admin_user_path(user),:method => :get , :class=>"btn btn-inverse"%>
                   <%#if category.status==true%>
                  <%#= link_to 'Active', change_status_admin_category_path(category), :class=>"btn btn-primary pull-left" ,:confirm => 'Do you want  to inactivate category?' %>
                   <%#else%>
                   <%#= link_to 'Inactive', change_status_admin_category_path(category), :class=>"btn btn-primary pull-left",:confirm => 'Do you want to activate category?' %> 
                   <%#end%>
                   
-                  <%= link_to 'Destroy', admin_user_path(user),:class=>"btn btn-block btn-danger", method: :delete, data: { confirm: 'Are you sure want to delete the category?' } %>
+                  <%= link_to 'Destroy', admin_user_path(user),:class=>"btn btn-danger", method: :delete, data: { confirm: 'Are you sure want to delete the category?' } %>
                   </td>
                   </tr>
               <% end %> 
