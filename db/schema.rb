@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131120065822) do
+ActiveRecord::Schema.define(:version => 20131121133131) do
 
   create_table "adminusers", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -53,6 +53,18 @@ ActiveRecord::Schema.define(:version => 20131120065822) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "post_questions", :force => true do |t|
+    t.integer  "post_id"
+    t.integer  "question_id"
+    t.integer  "subquestion_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "post_questions", ["post_id"], :name => "index_post_questions_on_post_id"
+  add_index "post_questions", ["question_id"], :name => "index_post_questions_on_question_id"
+  add_index "post_questions", ["subquestion_id"], :name => "index_post_questions_on_subquestion_id"
+
   create_table "posts", :force => true do |t|
     t.string   "name",                :limit => 45
     t.string   "company_name",        :limit => 90
@@ -72,8 +84,6 @@ ActiveRecord::Schema.define(:version => 20131120065822) do
     t.integer  "subcategory_id"
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
-    t.integer  "question_id"
-    t.integer  "subquestion_id"
   end
 
   add_index "posts", ["category_id"], :name => "index_posts_on_category_id"

@@ -1,3 +1,25 @@
+<script>
+  $(document).ready(function(){
+ 
+  $("#post_subcategory_id").live('change', function(){
+
+    var id = $(this).children(":selected").val();
+    var params = 'some_id=' + id;
+    $.ajax({
+      url: '/questions',
+      type: "GET",
+                            data: params,
+                            processData: false,
+                            contentType: false,
+                          //  success: function(data) {
+                          //  	alert(data);
+                          // $("#questions_results").html(data);
+                          //     }
+
+    });
+});
+  });
+  </script>
 <div class="container-fluid menu-hidden">
 		
 		<!-- Content -->

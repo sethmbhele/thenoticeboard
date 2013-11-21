@@ -1,0 +1,17 @@
+<% unless @questions.blank? %>
+     <h3> Tell us more about your needs</h3>
+                                  
+
+					                    <div>
+					                    <% @questions.each_with_index do |q, i| %>	
+					                    <label class="strong"><%#=i+1%></label><%= q.name %>
+					                    </div> 
+					                    <div>
+					                    <label class="strong"> </label>
+					                    <%= select_tag "select", options_from_collection_for_select(q.subquestions.order(:name), "id", "name") %>
+                              
+									<% end %>
+									 <label class="strong"> </label>
+									
+ <% end %>
+                        

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_user!
+ 
   
   # Method for post listing all posts
   # --------------------------------------------------------------------- 
@@ -17,10 +19,50 @@ class PostsController < ApplicationController
  # Method for search 
  #-----------------------------------------------------------------------
  def search 
-  if params[:name] 
-   @posts =  Post.joins(:subcategory).where(:zip => params[:zip]).where('subcategories.name ilike?', params[:name])
-  end
+ #  @subcategory =  Subcategory.all
+  # if params[:name] 
+  # @posts =  Post.joins(:subcategory).where(:zip => params[:zip]).where('subcategories.name ilike?', params[:name])
+  
+  
+  #   respond_to do |format|
+  #       format.html { redirect_to advance_search_path,:post => @posts ,  notice: 'Post was successfully updated.' }
+  #       format.json { head :no_content }
+     
+  #   end
+
+  # end
  end 
+
+ #-----------------------------------------------------------------------
+ # Method for advance search 
+ #-----------------------------------------------------------------------
+
+  def advance_search
+   @questions  = Question.joins(:subcategory).where('subcategories.name ilike?', params[:name]) 
+  end  
+
+
+ #-----------------------------------------------------------------------
+ # Method for advance search 
+ #-----------------------------------------------------------------------
+
+  def search_results
+   @questions  = Post.joins(:subcategory).where('subcategories.name ilike?', params[:name]) 
+  end  
+
+#-----------------------------------------------------------------------
+ # Method for advance search 
+ #-----------------------------------------------------------------------
+
+  def questions
+     @questions  = Question.where(:subcategory_id => params[:some_id])
+  
+     respond_to do |format|
+      format.js
+     end
+  end  
+
+
 
   #----------------------------------------------------------------------
   # Methods for listing indivisual post

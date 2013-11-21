@@ -18,7 +18,7 @@
                                     <p id="notice"><%= notice %></p>
                           </div>
                           
-                           <%= form_for search_path, :html => {:method => :get} do |f| %> 
+                           <%= form_for :subcategory, :url => advance_search_path, :html => {:method => :get} do |f| %> 
 					             
 					                    <div>What service you need?</div> 
 					                    <div>

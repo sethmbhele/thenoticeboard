@@ -17,7 +17,10 @@ Thenoticeboard::Application.routes.draw do
   
   match 'posts' => 'home#new'
   match 'search' => 'posts#search'
-
+  match 'advance_search' => 'posts#advance_search'
+  match 'results' => 'posts#search_results'
+  match 'questions' => 'posts#questions'
+  
   #admin routes
   namespace :admin do
 

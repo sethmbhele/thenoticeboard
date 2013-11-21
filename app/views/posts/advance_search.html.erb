@@ -1,0 +1,55 @@
+
+
+<div class="container-fluid menu-hidden">
+		
+		<!-- Content -->
+		<div id="content">
+		<div class="mid_contain">
+		    
+		    	<div class="widget widget-heading-simple widget-body-gray">
+					
+				  <div class="widget-body">
+					<div class="page-header">
+                            <h2> Tell us more about your needs</h2> <%#= link_to 'Back', posts_path, :class=>"btn btn-primary pull-right" %>
+                      
+
+                               <%= form_for :question, :url => results_path, :html => {:method => :get} do |f| %> 
+					             
+
+					                    <div>
+					                    <% @questions.each_with_index do |q, i| %>	
+					                    <label class="strong"><%#=i+1%></label><%= q.name %>
+					                    </div> 
+					                    <div>
+					                    <label class="strong"> </label>
+					                    <%= select_tag "select", options_from_collection_for_select(q.subquestions.order(:name), "id", "name") %>
+                              
+									<% end %>
+									 <label class="strong"> </label>
+									<%= f.submit "Search", :class=>"btn btn-primary pull-left" %>
+
+							<% end %>
+                        
+                          <div style="margin:0 auto 20px auto;text-align:center; color:green">
+                                    <p id="notice"><%= notice %></p>
+                          </div>
+                          
+						     </div>
+						    <div>
+					                   <!--  <% @questions.each do |q| %>	
+					                    <%= q.name %>
+					                    </div> 
+					                    <div>
+					                    <label class="strong"></label>
+					                    <%= select_tag "select", options_from_collection_for_select(q.subquestions.order(:name), "id", "name") %>
+                              
+									<% end %> -->
+						
+				  </div>
+			   </div>
+			
+		</div>
+	</div>
+</div>
+
+

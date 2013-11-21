@@ -14,7 +14,7 @@ $(document).ready (function() {
          "post[country_id]":{required: true},
          "post[category_id]":{required: true},
          "post[subcategory_id]":{required: true},
-          "post[question_id]":{required: true},
+         "post[question_id]":{required: true},
          "post[subquestion_id]":{required: true},
          "post[state_id]":{required: true},
          "post[city]":{required: true},
