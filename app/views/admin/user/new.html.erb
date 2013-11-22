@@ -17,6 +17,10 @@
           </div>
         </div>
         <div class="widget-body">
+         <% @user.errors.full_messages.each do |msg| %>
+                <li style="color:red"><%= msg %></li>
+              <% end %>
+
 
            <%= form_for(@user,:url => admin_user_index_path,:html => { :method => :post }) do |f| %>
           <!-- Row -->

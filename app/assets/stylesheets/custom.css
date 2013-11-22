@@ -20,12 +20,12 @@
 }
 .error
 {
-	color: red;
+	color: red !important;
 }
 
 #error_explanation
 {
-	color: red;
+	color: red ;
 }
 .user_body{
 	width:96%;

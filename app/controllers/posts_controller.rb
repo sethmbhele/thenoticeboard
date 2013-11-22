@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.order('created_at DESC')
 
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -56,7 +57,7 @@ class PostsController < ApplicationController
 
   def questions
      @questions  = Question.where(:subcategory_id => params[:some_id])
-  
+     #@post_questions = PostQuestion.new    
      respond_to do |format|
       format.js
      end
@@ -101,6 +102,7 @@ class PostsController < ApplicationController
   # --------------------------------------------------------------------------------
   def create
     @post = Post.new(params[:post])
+
 
     respond_to do |format|
       if @post.save

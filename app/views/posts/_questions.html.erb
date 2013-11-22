@@ -2,16 +2,21 @@
      <h3> Tell us more about your needs</h3>
                                   
 
-					                    <div>
+					                    <div><% a = [] %>
 					                    <% @questions.each_with_index do |q, i| %>	
-					                    <label class="strong"><%#=i+1%></label><%= q.name %>
+					                    <label class="strong">
+					                    </label><%= q.name %><% a.push(q.id) %>
+
 					                    </div> 
 					                    <div>
 					                    <label class="strong"> </label>
 					                    <%= select_tag "select", options_from_collection_for_select(q.subquestions.order(:name), "id", "name") %>
                               
-									<% end %>
+									    <% end %>
 									 <label class="strong"> </label>
 									
- <% end %>
+<% end %>
+                   
+                   
+
                         

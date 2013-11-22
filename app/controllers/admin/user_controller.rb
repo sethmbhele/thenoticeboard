@@ -5,7 +5,7 @@ class Admin::UserController < Admin::BaseController
   # --------------------------------------------------------------------- 
  
   def index
-  	@user = User.order('created_at DESC')
+  	@user = User.paginate(:page => params[:page], :per_page => 5,:order => 'created_at DESC')
   end
 
   #--------------------------------------------------------------------
