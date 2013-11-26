@@ -69,12 +69,12 @@
 
 										       	<div id="questions">
 					                        <label class="strong">Questions</label> 
-					                         <%= f.grouped_collection_select :question_id, Subcategory.order(:name), :questions, :name, :id, :name, include_blank: 'Select Questions' %>
+					                         <%#= f.grouped_collection_select :question_id, Subcategory.order(:name), :questions, :name, :id, :name, include_blank: 'Select Questions' %>
 					                        </div>
 
 					                        <div id="subquestions">
 					                        <label class="strong">Subquestions</label> 
-					                         <%= f.grouped_collection_select :subquestion_id, Question.order(:name), :subquestions, :name, :id, :name, include_blank: 'Select Subquestions' %>
+					                         <%#= f.grouped_collection_select :subquestion_id, Question.order(:name), :subquestions, :name, :id, :name, include_blank: 'Select Subquestions' %>
 					                        </div>
 
 

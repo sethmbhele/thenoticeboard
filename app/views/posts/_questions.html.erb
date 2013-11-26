@@ -3,6 +3,7 @@
                                   
 
 					                    <div><% a = [] %>
+					                    <% questions_ids = [] %>
 					                    <% @questions.each_with_index do |q, i| %>	
 					                    <label class="strong">
 					                    </label><%= q.name %><% a.push(q.id) %>
@@ -11,7 +12,7 @@
 					                    <div>
 					                    <label class="strong"> </label>
 					                    <%= select_tag "select", options_from_collection_for_select(q.subquestions.order(:name), "id", "name") %>
-                              
+                                        
 									    <% end %>
 									 <label class="strong"> </label>
 									

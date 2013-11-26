@@ -20,7 +20,10 @@
 //= require admin/less.min
 //= require admin/jquery.ui.touch-punch
 //= require admin/jquery.ui.touch-punch.min
-//= require admin/bootstrap.min
+//= require bootstrap.min
 //= require jquery.validate
+//= require jquery.themepunch.revolution.min
+//= require front_index_revolutionslider
 //= require posts
+//= require common
 //= require_tree .

@@ -6,7 +6,8 @@ class Admin::DashboardController < Admin::BaseController
 # --------------------------------------------------------------------- 
  
   def index
-   
+   @user_sign_up_count = User.where("DATE(created_at) = ?", Date.today)
+
   end
 
 end
