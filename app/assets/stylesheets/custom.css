@@ -36,3 +36,12 @@
 
  margin :0 5px !important;
 }
+
+
+.image_align i img {
+    border: 0 none;
+    height: auto;
+    max-width: 208px;
+    vertical-align: middle;
+    width:100%;
+}
