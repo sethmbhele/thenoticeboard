@@ -1,1 +1,5 @@
+<% unless @questions.blank? %> 
 $('#questions_results').html('<%= escape_javascript(render("questions")) %>');
+<% else%>
+$('#questions_results').text('No questions for this subcategory ');
+<% end %>

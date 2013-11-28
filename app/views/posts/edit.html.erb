@@ -1,3 +1,38 @@
+<script type="text/javascript">
+$(document).ready(function(){
+$('#update').click(function(){
+var ques  = new Array();
+var subques  = new Array();
+$('#questions_results span').each(function(){ques.push(this.id);});
+$('#question_ids').val(ques);
+$('#questions_results select').each(function(){subques.push(this.value);});
+$('#subquestion_ids').val(subques);
+   });
+   });
+
+
+
+ $(document).ready(function(){
+ 
+  $("#post_subcategory_id").live('change', function(){
+
+    var id = $(this).children(":selected").val();
+    var params = 'some_id=' + id;
+    $.ajax({
+      url: '/questions',
+      type: "GET",
+                            data: params,
+                            processData: false,
+                            contentType: false,
+                          //  success: function(data) {
+                          //  	alert(data);
+                          // $("#questions_results").html(data);
+                          //     }
+
+    });
+});
+  });
+</script>
 
 
 <div class="container-fluid menu-hidden">
@@ -66,16 +101,12 @@
 			                 
 						                  	</div>
 											                 
+                           <div id="questions_results">
 
-										       	<div id="questions">
-					                        <label class="strong">Questions</label> 
-					                         <%#= f.grouped_collection_select :question_id, Subcategory.order(:name), :questions, :name, :id, :name, include_blank: 'Select Questions' %>
-					                        </div>
+                           <%= render 'questions' %>
+                          </div>
+										       	
 
-					                        <div id="subquestions">
-					                        <label class="strong">Subquestions</label> 
-					                         <%#= f.grouped_collection_select :subquestion_id, Question.order(:name), :subquestions, :name, :id, :name, include_blank: 'Select Subquestions' %>
-					                        </div>
 
 
 						                    <label class="strong">Country  </label> 
@@ -98,17 +129,20 @@
 						                   
 						                 
 						                    <label class="strong">URL  </label><%= f.text_field :url %>
+
+
+						                    <%= hidden_field_tag :question_ids, params[:question_ids]  %>
+                       					    <%= hidden_field_tag :subquestion_ids, params[:subquestion_ids] %>
 						                    
 						              <label class="strong"></label>
-						                  <div class="span4 center">
+						                  <div class="span4 center" id="update">
 						                    <%= f.submit 'Update Post', :class => 'btn btn-primary' %>
 
-						                  </div>
-						              
+						                  </div>				              
 						      </div>
 						 </div>
 					 </div>
-  <% end %>
+  				<% end %>
 						
 						
 				 </div>

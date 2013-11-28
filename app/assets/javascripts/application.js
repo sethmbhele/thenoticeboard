@@ -24,7 +24,6 @@
 //= require jquery.validate
 //= require jquery.themepunch.revolution.min
 //= require front_index_revolutionslider
-//= require posts
 //= require jquery.event.move
 //= require jquery.event.swipe
 //= require common
@@ -47,4 +46,5 @@
 //= require jquery.flot.selection
 //= require jquery.flot.tooltip
 //= require charts.helper
+//= require posts
 //= require_tree .

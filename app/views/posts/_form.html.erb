@@ -1,4 +1,15 @@
-
+<script type="text/javascript">
+$(document).ready(function(){
+$('#submit').click(function(){
+var ques  = new Array();
+var subques  = new Array();
+$('#questions_results span').each(function(){ques.push(this.id);});
+$('#question_ids').val(ques);
+$('#questions_results select').each(function(){subques.push(this.value);});
+$('#subquestion_ids').val(subques);
+   });
+   });
+</script>
 
 
  <%= form_for(@post) do |f| %>
@@ -73,10 +84,11 @@
                      
                         <label class="strong">URL  </label><%= f.text_field :url %>
 
-
+                       <%= hidden_field_tag :question_ids, params[:question_ids]  %>
+                        <%= hidden_field_tag :subquestion_ids, params[:subquestion_ids] %>
                         <%= f.hidden_field :user_id , :value => current_user.id %>
                         <label class="strong"></label>
-                      <div class="span4 center">
+                      <div class="span4 center", id="submit">
                         <%= f.submit 'Create Post', :class => 'btn btn-success' %>
 
                       </div>

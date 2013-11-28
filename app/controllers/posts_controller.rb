@@ -95,6 +95,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @questions  = Question.where(:subcategory_id => @post.subcategory_id)
   end
 
   #--------------------------------------------------------------------------------
@@ -102,10 +103,17 @@ class PostsController < ApplicationController
   # --------------------------------------------------------------------------------
   def create
     @post = Post.new(params[:post])
-
+    
 
     respond_to do |format|
       if @post.save
+
+    questions = params[:question_ids].split(",").map(&:to_i)
+    subquestions = params[:subquestion_ids].split(",").map(&:to_i)
+       questions.each.with_index do |q, i|
+        PostQuestion.create(:post_id => @post.id, :question_id =>q , :subquestion_id => subquestions[i])   
+    end
+  
         format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
         format.json { render json: posts_path, status: :created, location: posts_path }
       else
@@ -121,8 +129,33 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
+
     respond_to do |format|
       if @post.update_attributes(params[:post])
+   
+   unless params[:question_ids].blank?
+        questions = params[:question_ids].split(",").map(&:to_i)
+        subquestions = params[:subquestion_ids].split(",").map(&:to_i)
+          
+            questions.each.with_index do |q, i|
+            post_questoions = PostQuestion.where(:post_id => @post.id)
+             
+                   unless post_questoions.blank?     
+                        post_questoions.each do |t|
+                        t.update_attributes(:question_id =>q, :subquestion_id => subquestions[i])   
+                        end
+                   else
+                       PostQuestion.where(:post_id => @post.id).delete_all
+                   end           
+            
+            end
+
+      else
+
+        PostQuestion.where(:post_id => @post.id).delete_all
+
+      end  
+
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else

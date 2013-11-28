@@ -9,8 +9,12 @@ Image-4.jpg: Image-4.jpg
 Image-4/index.jpg: Image-4.jpg
 active.png: active.png
 active/index.png: active.png
+bg-dark.png: bg-dark.png
+bg-dark/index.png: bg-dark.png
 deactive.png: deactive.png
 deactive/index.png: deactive.png
+easy-pie-chart.png: easy-pie-chart.png
+easy-pie-chart/index.png: easy-pie-chart.png
 fashion/female/1.jpg: fashion/female/1.jpg
 fashion/female/1/index.jpg: fashion/female/1.jpg
 fashion/female/2.jpg: fashion/female/2.jpg
