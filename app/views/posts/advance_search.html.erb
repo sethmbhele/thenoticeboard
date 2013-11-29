@@ -1,5 +1,16 @@
 
-
+<script type="text/javascript">
+$(document).ready(function(){
+$('#search').click(function(){
+var ques  = new Array();
+var subques  = new Array();
+$('.questions span').each(function(){ques.push(this.id);});
+$('#question_ids').val(ques);
+$('.questions select').each(function(){subques.push(this.value);});
+$('#subquestion_ids').val(subques);
+   });
+   });
+</script>
 <div class="container-fluid menu-hidden">
 		
 		<!-- Content -->
@@ -14,25 +25,31 @@
                       
 
                                <%= form_for :question, :url => results_path, :html => {:method => :get} do |f| %> 
-					             
+					             <div class="questions">
 
 					                    <div>
 					                    <% @questions.each_with_index do |q, i| %>	
-					                    <label class="strong"><%#=i+1%></label><%= q.name %>
+					                    <label class="strong"><%#=i+1%></label><span id='<%= q.id %>'><%= q.name %></span>
 					                    </div> 
 					                    <div>
 					                    <label class="strong"> </label>
 					                    <%= select_tag "select", options_from_collection_for_select(q.subquestions.order(:name), "id", "name") %>
-                              
-									<% end %>
-									 <label class="strong"> </label>
-									<%= f.submit "Search", :class=>"btn btn-primary pull-left" %>
+                                      
 
+									<% end %>
+
+
+									
+                                     <%= hidden_field_tag :question_ids %>   
+                                     <%= hidden_field_tag :subquestion_ids %>  
+                                     <%= hidden_field_tag :zip , params[:zip] %> 
+                                     <%= hidden_field_tag :name , params[:name] %> 
+									 <label class="strong"> </label>
+									<%= f.submit "Search", :class=>"btn btn-primary pull-left", :id => "search" %>
+									</div>	
 							<% end %>
                         
-                          <div style="margin:0 auto 20px auto;text-align:center; color:green">
-                                    <p id="notice"><%= notice %></p>
-                          </div>
+                          
                           
 						     </div>
 						    <div>

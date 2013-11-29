@@ -6,6 +6,5 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :state
   belongs_to :country
-  belongs_to :question
-  belongs_to :subquestion
+  has_many   :post_questions
 end

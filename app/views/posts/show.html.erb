@@ -58,14 +58,18 @@
 </p>
 
 <p>
-  <b>Question:</b>
-  <%= @post.question.name unless @post.question.blank? %>
+  <b>Questions:</b>
+  <% @post.post_questions.each do |q|%>
+
+   <p><%= q.question.name %> </p>
+   </p>
+   <p> 
+  <b>Subquestion:</b>
+    <p><%= q.question.subquestions.first.name %></p>
+   <% end %>  
 </p>
 
-<p>
-  <b>Subquestion:</b>
-  <%= @post.subquestion.name unless @post.subquestion.blank? %>
-</p>
+
 
 <p>
   <b>Country:</b>

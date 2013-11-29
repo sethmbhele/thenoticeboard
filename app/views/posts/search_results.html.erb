@@ -1,0 +1,49 @@
+<div class="container-fluid menu-hidden">
+        
+        <!-- Content -->
+        <div id="content">
+            <div class="container-960 innerT">
+            <div>
+
+                <div class="page-header">
+                            <h2>The Questes listed below</h2>
+                          </div>
+                              
+                        
+                          </div>
+        <% unless @posts.empty? %>
+                        <table class="table-responsive table table-bordered table-striped"  >
+                                  <tr>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Subcategory</th>
+                                    <th>Country</th>
+                                      <th></th>
+                                      <!--<th></th>
+                                      <th></th>
+                                      -->
+                                  </tr>
+
+                                <% @posts.each do |post| %>
+                                  <tr>
+                                    <td><%= post.name %></td>
+                                     <td><%= post.category.name %></td>
+                                      <td><%= post.subcategory.name %></td>
+                                      <td><%= post.country.name %></td>
+                                   
+                                    <td><%= link_to 'Show', post ,:class=>"btn btn-btn" %></td>
+                                  <!--  <td><%#= link_to 'Edit', edit_post_path(post),:class=>"btn btn-inverse" %></td>
+                                    <td><%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" %></td>
+                                    -->
+                                  </tr>
+                                <% end %>
+                        </table>
+			<% else %>
+			 No posts available for the search results
+			<% end %>
+                       <br />
+          
+                </div>
+            </div>
+        </div>
+    </div>

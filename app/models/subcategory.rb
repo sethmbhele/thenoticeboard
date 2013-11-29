@@ -6,4 +6,5 @@ class Subcategory < ActiveRecord::Base
   auto_strip_attributes :name
   belongs_to :category
   has_many :questions
+  
 end
