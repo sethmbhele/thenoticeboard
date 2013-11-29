@@ -107,12 +107,13 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+     # questions and subquestions ids adding to join table
 
-    questions = params[:question_ids].split(",").map(&:to_i)
-    subquestions = params[:subquestion_ids].split(",").map(&:to_i)
+     questions = params[:question_ids].split(",").map(&:to_i)
+      subquestions = params[:subquestion_ids].split(",").map(&:to_i)
        questions.each.with_index do |q, i|
         PostQuestion.create(:post_id => @post.id, :question_id =>q , :subquestion_id => subquestions[i])   
-    end
+      end
   
         format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
         format.json { render json: posts_path, status: :created, location: posts_path }
@@ -133,28 +134,31 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.update_attributes(params[:post])
    
-   unless params[:question_ids].blank?
+   # questions and subquestions update ids
+   
+   unless params[:question_ids].nil?
+
         questions = params[:question_ids].split(",").map(&:to_i)
-        subquestions = params[:subquestion_ids].split(",").map(&:to_i)
-          
+          subquestions = params[:subquestion_ids].split(",").map(&:to_i)
+           
             questions.each.with_index do |q, i|
-            post_questoions = PostQuestion.where(:post_id => @post.id)
-             
-                   unless post_questoions.blank?     
-                        post_questoions.each do |t|
-                        t.update_attributes(:question_id =>q, :subquestion_id => subquestions[i])   
-                        end
-                   else
-                       PostQuestion.where(:post_id => @post.id).delete_all
-                   end           
+
+              post_questions = PostQuestion.where(:post_id => @post.id)
+           
+                    if post_questions.empty?
+                      
+                        PostQuestion.create(:post_id => @post.id, :question_id =>q , :subquestion_id => subquestions[i])
+                   
+                    else
+
+                       post_questions.each.with_index do |t, i|                          
+                         t.update_attributes(:question_id =>q, :subquestion_id => subquestions[i])   
+                       end
+                    end           
             
-            end
+            end   
 
-      else
-
-        PostQuestion.where(:post_id => @post.id).delete_all
-
-      end  
+    end  
 
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
