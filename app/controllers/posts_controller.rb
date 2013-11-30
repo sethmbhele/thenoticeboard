@@ -44,19 +44,16 @@ class PostsController < ApplicationController
 
 
  #-----------------------------------------------------------------------
- # Method for advance search with zip ,subcategory, questions and subquestions 
+ # Method for advance search with zip ,subcategory, questions and subquestion_ids 
  #-----------------------------------------------------------------------
 
   def search_results
-
-   @subcategory = params[:name]
-   @zip         = params[:zip]
    @question  = params[:question_ids].split(",").map(&:to_i)
    @subquestions = params[:subquestion_ids].split(",").map(&:to_i)
-   @questions  = Post.joins(:subcategory).where('subcategories.name ilike?', params[:name]) 
-   @post = @questions.where(:zip => params[:zip]).pluck(:id)
-   @posts = PostQuestion.where(:question_id => @question, :subquestion_id => @subquestions, :post_id => @post).pluck(:post_id) 
-   @posts = Post.where(:id => @post & @posts)
+      @questions  = Post.joins(:subcategory).where('subcategories.name ilike?', params[:name]) 
+      @post  = @questions.where(:zip => params[:zip]).pluck(:id)
+      @posts = PostQuestion.where(:question_id => @question, :subquestion_id => @subquestions, :post_id => @post).pluck(:post_id) 
+      @posts = Post.where(:id => @post & @posts)
   end  
 
 #-----------------------------------------------------------------------
